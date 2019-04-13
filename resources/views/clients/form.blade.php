@@ -15,10 +15,11 @@
 
 <div class="form-group">
     <label for="exampleInputFile">Type</label>
-    <select required  class="form-control" name="type">
+    <select required  class="form-control" name="type_id">
         <option selected value="">Select type </option>
-        <option value="CLIENT">Client</option>
-        <option value="PARTNER">Partner</option>
+        @foreach($types as $type)
+            <option value="{!! $type->id !!}">{!! $type->type !!}</option>
+        @endforeach
     </select>
 </div>
 

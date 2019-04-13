@@ -31,6 +31,10 @@ class ClientService
     public function datatables($clients)
     {
         $tableData = Datatables::of($clients)
+            ->addColumn('type', function (Client $client) {
+                return $client->getType->type;
+
+            })
             ->addColumn('actions', function ($data)
             {
                 return view('partials.actionBtns')->with('controller','clients')

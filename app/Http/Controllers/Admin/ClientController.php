@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Util\AbstractController;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Services\ClientService;
 use Response;
@@ -27,6 +28,7 @@ class ClientController extends AbstractController {
             return $tableData;
 
         return view('clients.index')
+              ->with('types', Type::get())
               ->with('modal', 'clients')
               ->with('tableData', $tableData);
     }

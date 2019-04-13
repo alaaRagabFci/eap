@@ -22,7 +22,7 @@ return [
     |
     */
 
-    'baseUrl' => 'http://localhost/eap_',
+    'baseUrl' => 'http://localhost/eap',
 
     /*
     |--------------------------------------------------------------------------
