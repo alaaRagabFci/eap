@@ -76,7 +76,7 @@ class NewService
             if(isset($parameters['image']) && $parameters['image'] != ""){
                 $data = $this->utilityService->uploadImage($parameters['image']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['image'] = $data['image'];
             }else{
                 return array('status' => false, 'message' => 'Image required');
@@ -84,10 +84,10 @@ class NewService
 
             $news = new News();
             $news->create($parameters);
-            return array('status' => 'true', 'message' => 'News created');
+            return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'News already exist');
+            return response(array('msg' => 'Entity already exist'), 404);
         }
     }
 
@@ -116,10 +116,10 @@ class NewService
             }
 
             $news->update($parameters);
-            return array('status' => 'true', 'message' => 'News updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'News not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

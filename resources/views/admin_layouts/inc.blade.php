@@ -9,10 +9,10 @@
         <meta content="Preview page of Metronic Admin Theme #4 for statistics, charts, recent events and reports" name="description" />
         <meta content="" name="author" />
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-<link rel='stylesheet' href="{{ asset('/admin_ui/assets/layouts/layout4/css/chosen.min.css') }}">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
+        <link href="{{ asset('/admin_ui/assets/global/plugins/font-awesome/css/all.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('/admin_ui/assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('/admin_ui/assets/global/plugins/simple-line-icons/simple-line-icons.min.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('/admin_ui/assets/global/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -32,6 +32,10 @@
         <style type="text/css">
             .alerts-list{
                 list-style: none;
+            }
+            .sweet-alert {
+                z-index: 1000000000;
+                border: solid 3px #42a1d5;
             }
         </style>
         @yield('styles')
@@ -156,7 +160,7 @@
         <div class="page-footer">
             <div class="page-footer-inner"> 2019 &copy; Designed By
                 <a target="_blank" href="https://www.linkedin.com/in/alaa-ragab-606a07b7/">Eng Alaa Ragab</a> &nbsp;|&nbsp;
-                <a href="{{ url('adminpanel') }}">EAP!</a>
+                <a href="{{ url('/') }}">EAP!</a>
             </div>
             <div class="scroll-to-top">
                 <i class="icon-arrow-up"></i>

@@ -48,7 +48,7 @@ class HeadDescriptionController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $aboutUs = $this->headDescriptionService->createDescription($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $aboutUs;
     }
     /**
      * Edit description.
@@ -87,7 +87,7 @@ class HeadDescriptionController extends AbstractController {
             session('description_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $description;
     }
 
     /**

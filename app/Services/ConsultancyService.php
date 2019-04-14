@@ -76,7 +76,7 @@ class ConsultancyService
             if(isset($parameters['image']) && $parameters['image'] != ""){
                 $data = $this->utilityService->uploadImage($parameters['image']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['image'] = $data['image'];
             }else{
                 return array('status' => false, 'message' => 'Image required');
@@ -84,10 +84,10 @@ class ConsultancyService
 
             $consultance = new Consultance();
             $consultance->create($parameters);
-            return array('status' => 'true', 'message' => 'Consultance created');
+            return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Consultance already exist');
+            return response(array('msg' => 'Entity already exist'), 404);
         }
     }
 
@@ -116,10 +116,10 @@ class ConsultancyService
             }
 
             $consultance->update($parameters);
-            return array('status' => 'true', 'message' => 'Consultance updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Consultance not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

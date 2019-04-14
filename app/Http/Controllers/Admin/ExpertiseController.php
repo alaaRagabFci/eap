@@ -47,7 +47,7 @@ class ExpertiseController extends AbstractController {
         $data  = $request->all();
         $data['icon'] = $request->hasFile('icon') ? $request->file('icon') : "";
         $expertise = $this->expertiseService->creatExpertise($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $expertise;
     }
     /**
      * Edit expertise.
@@ -85,7 +85,7 @@ class ExpertiseController extends AbstractController {
             session('expertise_id'), $data, $images ,session('icon')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $expertise;
     }
 
     /**

@@ -75,7 +75,7 @@ class SettingController extends AbstractController {
             session('settingLogoEn')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $setting;
     }
 
     /**

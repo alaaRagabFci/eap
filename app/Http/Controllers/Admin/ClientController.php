@@ -46,7 +46,7 @@ class ClientController extends AbstractController {
     {
         $data  = $request->all();
         $client = $this->clientService->createClient($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $client;
     }
     /**
      * Edit client.
@@ -76,7 +76,7 @@ class ClientController extends AbstractController {
         $data  = $request->all();
         $client = $this->clientService->updateClient($data, $id);
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $client;
     }
 
     /**

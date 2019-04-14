@@ -76,18 +76,18 @@ class HeadDescriptionService
             if(isset($parameters['image']) && $parameters['image'] != ""){
                 $data = $this->utilityService->uploadImage($parameters['image']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['image'] = $data['image'];
             }else{
-                return array('status' => false, 'message' => 'Image required');
+                return response(array('msg' => 'Image required'), 404);
             }
 
             $description = new Description();
             $description->create($parameters);
-            return array('status' => 'true', 'message' => 'Description created');
+            return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Description already exist');
+            return response(array('msg' => 'Entity already exist'), 404);
         }
     }
 
@@ -109,17 +109,17 @@ class HeadDescriptionService
             if(isset($images['image']) && $images['image'] != ""){
                 $data = $this->utilityService->uploadImage($images['image']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['image'] = $data['image'];
             }else{
                 $parameters['image']  = $image;
             }
 
             $description->update($parameters);
-            return array('status' => 'true', 'message' => 'Description updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Description not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

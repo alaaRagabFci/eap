@@ -47,7 +47,7 @@ class ServiceController extends AbstractController {
         $data  = $request->all();
         $data['icon'] = $request->hasFile('icon') ? $request->file('icon') : "";
         $service = $this->serviceService->createService($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $service;
     }
     /**
      * Edit service.
@@ -85,7 +85,7 @@ class ServiceController extends AbstractController {
             session('service_id'), $data, $images ,session('icon')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $service;
     }
 
     /**

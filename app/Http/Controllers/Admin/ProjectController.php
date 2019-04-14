@@ -47,7 +47,7 @@ class ProjectController extends AbstractController {
         $data  = $request->all();
         $data['icon'] = $request->hasFile('icon') ? $request->file('icon') : "";
         $project = $this->projectService->createProject($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $project;
     }
     /**
      * Edit project.
@@ -85,7 +85,7 @@ class ProjectController extends AbstractController {
             session('project_id'), $data, $images ,session('icon')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $project;
     }
 
     /**

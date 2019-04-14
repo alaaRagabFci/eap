@@ -47,7 +47,7 @@ class ManagmentController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $managment = $this->managmentService->createManagment($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $managment;
     }
     /**
      * Edit managment.
@@ -85,7 +85,7 @@ class ManagmentController extends AbstractController {
             session('managment_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $managment;
     }
 
     /**

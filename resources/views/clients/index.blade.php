@@ -24,7 +24,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="btn-group">
-                <button  data-toggle="modal" data-target="#addModal" id="sample_editable_1_new" class="btn sbold green">
+                <button  data-toggle="modal" data-target="#addModal" id="sample_editable_1_new" class="btn btn-primary">
                   Add New
                   <i class="fa fa-plus"></i>
                 </button>

@@ -47,7 +47,7 @@ class PublicationController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $publication = $this->publicationService->createPublication($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $publication;
     }
     /**
      * Edit publication.
@@ -85,7 +85,7 @@ class PublicationController extends AbstractController {
             session('publication_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $publication;
     }
 
     /**

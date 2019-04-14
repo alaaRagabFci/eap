@@ -47,7 +47,7 @@ class AboutUsController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $aboutUs = $this->aboutUsService->createAboutUs($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $aboutUs;
     }
     /**
      * Edit about us.
@@ -85,7 +85,7 @@ class AboutUsController extends AbstractController {
             session('aboutUs_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $aboutUs;
     }
 
     /**

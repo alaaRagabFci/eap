@@ -91,17 +91,17 @@ class SettingsService
             if(isset($images['logoEn']) && $images['logoEn'] != ""){
                 $data = $this->utilityService->uploadImage($images['logoEn']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['logo_en'] = $data['image'];
             }else{
                 $parameters['logo_en']  = $logoEn;
             }
 
             $setting->update($parameters);
-            return array('status' => 'true', 'message' => 'Setting updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Setting not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

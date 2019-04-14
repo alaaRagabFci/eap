@@ -78,10 +78,10 @@ class ClientService
         try {
             $client = new Client();
             $client->create($parameters);
-            return array('status' => 'true', 'message' => 'Client created');
+            return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Client already exist');
+            return response(array('msg' => 'Entity already exist'), 404);
         }
     }
 
@@ -101,10 +101,10 @@ class ClientService
         try {
             $client = Client::findOrFail($clientId);
             $client->update($parameters);
-            return array('status' => 'true', 'message' => 'Client updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Client not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

@@ -47,7 +47,7 @@ class ConsultancyController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $consultancie = $this->consultancyService->createConsultance($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $consultancie;
     }
     /**
      * Edit consultancie.
@@ -85,7 +85,7 @@ class ConsultancyController extends AbstractController {
             session('consultancie_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $consultancie;
     }
 
     /**

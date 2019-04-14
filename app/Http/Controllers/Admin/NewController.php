@@ -47,7 +47,7 @@ class NewController extends AbstractController {
         $data  = $request->all();
         $data['image'] = $request->hasFile('image') ? $request->file('image') : "";
         $news = $this->newService->createNews($data);
-        return Response::json(['msg'=>'Adding Successfully',200]);
+        return $news;
     }
     /**
      * Edit news.
@@ -85,7 +85,7 @@ class NewController extends AbstractController {
             session('news_id'), $data, $images ,session('image')
         );
 
-        return Response::json(['msg'=>'Updated Successfully',200]);
+        return $news;
     }
 
     /**

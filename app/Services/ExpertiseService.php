@@ -76,7 +76,7 @@ class ExpertiseService
             if(isset($parameters['icon']) && $parameters['icon'] != ""){
                 $data = $this->utilityService->uploadImage($parameters['icon']);
                 if(!$data['status'])
-                    return array('status' => -5, 'message' => $data['errors']);
+                    return response(array('msg' => $data['errors']), 404);
                 $parameters['icon'] = $data['image'];
             }else{
                 return array('status' => false, 'message' => 'Image required');
@@ -84,10 +84,10 @@ class ExpertiseService
 
             $expertise = new Expertise();
             $expertise->create($parameters);
-            return array('status' => 'true', 'message' => 'Expertise created');
+            return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Expertise already exist');
+            return response(array('msg' => 'Entity already exist'), 404);
         }
     }
 
@@ -116,10 +116,10 @@ class ExpertiseService
             }
 
             $expertise->update($parameters);
-            return array('status' => 'true', 'message' => 'Expertise updated');
+            return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'Expertise not found');
+            return response(array('msg' => 'Entity not found'), 404);
         }
     }
 

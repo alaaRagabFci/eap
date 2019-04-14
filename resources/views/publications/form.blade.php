@@ -8,12 +8,6 @@
     <a href="#" required class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
 </div>
 
-<div class="form-group" style="display:none;">
-    <label for="exampleInputFile">pic path</label>
-    <input type="text" name="image" id="image" required>
-</div>
-
-
 <div class="form-group">
     <label for="exampleInputPassword1">Title ar</label>
     <input type="text" name="title_ar" required class="form-control">

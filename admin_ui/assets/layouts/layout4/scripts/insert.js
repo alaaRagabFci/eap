@@ -2,23 +2,28 @@
 
 $(document).ready(function() {
 
-  $("#submitForm").on('click', function(e){
-    $('#addModal').modal('hide');
-  });
-
        //add siteoption
        $("#addModal form").on('submit', function(e){
         if (!e.isDefaultPrevented())
         {
           var self = $(this);
+          var data = convert(self.serialize());
           $.ajax({
             url: self.closest('form').attr('action'),
             type: "POST",
             data: self.serialize(),
+            beforeSend: function(){
+                var values = Object.values(data);
+                for (i = 0; i < values.length; i++) {
+                    if (values[i] == "")
+                        return false;
+                }
+            },
             success: function(res){
               $('.addForm')[0].reset();
+                $('#addModal').modal('hide');
               swal({
-                title: "Inserted successfully", 
+                title: "Created successfully",
                 type: "success",
                 closeOnConfirm: false,
                 confirmButtonText: "OK !",
@@ -28,9 +33,9 @@ $(document).ready(function() {
               oTable.draw();
             },
             error: function(){
-              $('#addModal').modal('hide');
+              // $('#addModal').modal('hide');
               swal({
-                title: "Inserted Failed",
+                title: "Error ocurred, check form",
                 type: "error",
                 closeOnConfirm: false,
                 confirmButtonText: "OK !",
@@ -48,14 +53,22 @@ $(document).ready(function() {
        if (!e.isDefaultPrevented())
        {
          var self = $(this);
+           var data = convert(self.serialize());
          $.ajax({
            url: self.closest('form').attr('action') + "/" +  self.attr("data-id"),
            type: "POST",
            data: "_method=PUT&" + self.serialize(),
+             beforeSend: function(){
+                 var values = Object.values(data);
+                 for (i = 0; i < values.length; i++) {
+                     if (values[i] == "")
+                         return false;
+                 }
+             },
            success: function(res){
              $('#editModal').modal('hide');
              swal({
-              title: "Updated successfully", 
+              title: "Updated successfully",
               type: "success",
               closeOnConfirm: false,
               confirmButtonText: "OK !",
@@ -65,9 +78,9 @@ $(document).ready(function() {
              oTable.draw();
            },
            error: function(){
-             $('#editModal').modal('hide');
+             // $('#editModal').modal('hide');
              swal({
-              title: "Updated Failed", 
+              title: "Error updating data, check form",
               type: "error",
               closeOnConfirm: false,
               confirmButtonText: "OK !",
@@ -80,6 +93,19 @@ $(document).ready(function() {
        }
      });
 
-      
 
+    function convert(str){
+        str = str.replace(/\(|\)/g,'');
+        var arr = str.split('&');
+        var obj = {};
+        for (var i = 0; i < arr.length; i++) {
+            var singleArr = arr[i].trim().split('=');
+            var name = singleArr[0];
+            var value = singleArr[1];
+            if (obj[name] == undefined) {
+                obj[name] = value;
+            }
+        }
+        return obj;
+    }
     });
