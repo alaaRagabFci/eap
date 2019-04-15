@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2019 at 06:55 PM
+-- Generation Time: Apr 15, 2019 at 03:08 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -37,6 +37,13 @@ CREATE TABLE `about_us` (
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `about_us`
+--
+
+INSERT INTO `about_us` (`id`, `title_ar`, `title_en`, `description_ar`, `description_en`, `image`) VALUES
+(4, 'jj', 'jj', 'jj', 'jj', '/images/uploads/1555190347bb4238fc4a97127c224f80085a2a7bedimage.png');
+
 -- --------------------------------------------------------
 
 --
@@ -49,14 +56,6 @@ CREATE TABLE `clients` (
   `name_en` varchar(100) NOT NULL,
   `type_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `clients`
---
-
-INSERT INTO `clients` (`id`, `name_ar`, `name_en`, `type_id`) VALUES
-(3, 'jjj', 'jj', 2),
-(4, 'ff', 'dd', 1);
 
 -- --------------------------------------------------------
 
@@ -73,13 +72,6 @@ CREATE TABLE `consultances` (
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `consultances`
---
-
-INSERT INTO `consultances` (`id`, `title_ar`, `title_en`, `description_ar`, `description_en`, `image`) VALUES
-(2, 'jj', 'jj', 'jj', 'jj', '/images/uploads/15550912301f2d2f17eb0f2d2d09b11f08ae13eacdimage.png');
-
 -- --------------------------------------------------------
 
 --
@@ -88,13 +80,28 @@ INSERT INTO `consultances` (`id`, `title_ar`, `title_en`, `description_ar`, `des
 
 CREATE TABLE `descriptions` (
   `id` int(11) NOT NULL,
-  `page` varchar(100) NOT NULL,
+  `page` enum('ABOUTUS','CLIENTS','CONSULTANCY','EXPERTISES','MANAGMENT','NEWS','PROJECTS','SERVICES','WORK') NOT NULL,
   `title_ar` varchar(100) NOT NULL,
   `title_en` varchar(100) NOT NULL,
   `description_ar` text NOT NULL,
   `description_en` text NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `descriptions`
+--
+
+INSERT INTO `descriptions` (`id`, `page`, `title_ar`, `title_en`, `description_ar`, `description_en`, `image`) VALUES
+(2, 'ABOUTUS', 'jjj', 'EAP for Consultancy & Training', 'jjj', 'Information and illustrations to be inserted', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(3, 'WORK', '', 'Expertise, Services and Projects', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(4, 'CONSULTANCY', '', 'CONSULTANCY APPROACH', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(5, 'MANAGMENT', '', 'QUALITY MANAGMENT', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(6, 'CLIENTS', '', 'CLIENTS & PARTNERS', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(7, 'NEWS', '', 'NEWS & PUBLICATIONS', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(8, 'PROJECTS', '', 'Our Projects', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(9, 'SERVICES', '', 'Our Services', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png'),
+(10, 'EXPERTISES', '', 'Our Expertise', '', 'Information and illustrations to be inserted\r\n', '/images/uploads/15551792717181c55b56c73fe0dd6a59ca509220bdimage.png');
 
 -- --------------------------------------------------------
 
@@ -212,7 +219,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `logo_ar`, `logo_en`, `location_ar`, `location_en`, `email`, `phone`, `facebook`, `twitter`, `google`) VALUES
-(1, '/images/uploads/1555067341ed3ac282c17d78b580dfe4e15fa9e4ebimage.png', '/images/uploads/155506734144c9287b767600c7880129ef84202a0fimage.png', 'kk', 'kk', 'admin@jowd.com', '01013696675', 'http://www.facebook.com', 'http://www.twitter.com', 'http://www.google.com');
+(1, '/images/uploads/1555197526422dfa5a7635e09d70a701590a11cb3bimage.png', '/images/uploads/1555197526cab28721571e124b3d813bb74a9cbf8aimage.png', 'lllll', 'iuy', 'admin@jowd.com2', '010136966753', 'http://www.facebook.com', 'http://www.twitter.com', 'http://www.google.com');
 
 -- --------------------------------------------------------
 
@@ -254,7 +261,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Hossam', 'hossam@eap.com', '$2y$10$WmeLbczKuYFnEtCnOgm.ie3phaI4kG.lxAvjrC9bG2LViWv8TUxfW', 'DgQ3U5zrcUnnV1VeFYyyBulNxBZwehf1vrtobJpVgbzgnPhplWmuI1O6sa31', '2017-10-24 09:30:04', '2019-04-12 19:15:10'),
+(1, 'Hossam', 'hossam@eap.com', '$2y$10$WmeLbczKuYFnEtCnOgm.ie3phaI4kG.lxAvjrC9bG2LViWv8TUxfW', 'I7bdGJv3KzSWrP0QkrX7cOL1xbMxlr2kE3SFBF6jjDVfRT7JxulRQsgDzE3e', '2017-10-24 09:30:04', '2019-04-12 19:15:10'),
 (3, 'asd', 'alaaragab34@gmail.com', '$2y$10$fWvno0l8JE164l0C0V.gleZDir8Xi2CJhH7RqZ6zDdyWo9Sm.jsx.', 'dye6DQWXqRFUaHhtYGAEbSk4bnJWaS1RWeBjJcqT05PYjIqF4MfyLmVxoLHi', '2019-04-10 18:30:56', '2019-04-10 18:30:56');
 
 --
@@ -284,7 +291,8 @@ ALTER TABLE `consultances`
 -- Indexes for table `descriptions`
 --
 ALTER TABLE `descriptions`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `page` (`page`);
 
 --
 -- Indexes for table `expertises`
@@ -349,25 +357,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `about_us`
 --
 ALTER TABLE `about_us`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `consultances`
 --
 ALTER TABLE `consultances`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `descriptions`
 --
 ALTER TABLE `descriptions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `expertises`

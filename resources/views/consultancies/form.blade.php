@@ -4,7 +4,7 @@
 <div class="fileupload fileupload-new" data-provides="fileupload">
     <span class="btn btn-primary btn-file"><span class="fileupload-new">Image</span>
     <span class="fileupload-exists">Change</span>
-    <input required type="file" name="image"/></span>
+    <input required type="file" name="image" required/></span>
     <span class="fileupload-preview"></span>
     <a href="#" required class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
     <span class="help-block with-errors errorName"></span>
