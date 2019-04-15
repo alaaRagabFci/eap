@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'check_token' => \App\Http\Middleware\check_token::class,
         'validateInputs' => \App\Http\Middleware\ValidateInputs::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'lang' => \App\Http\Middleware\Lang::class,
     ];
 }

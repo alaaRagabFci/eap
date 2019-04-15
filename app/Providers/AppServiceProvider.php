@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\News;
 use App\Models\Service;
 use App\Models\Client;
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        app()->singleton('lang',function(){
+            if(session()->has('lang'))
+                return session()->get('lang');
+            else
+                return 'ar';
+        });
 
         view()->share('projects', Project::count());
         view()->share('news', News::count());

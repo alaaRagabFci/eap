@@ -67,6 +67,24 @@ Route::group(['middleware' => ['web']], function () {
         Route::Post('/news/update', 'NewController@update');
         Route::Resource('/news', 'NewController');
     });
+    Route::group(['namespace' => 'Front', 'middleware' => 'lang'], function () {
+        Route::Get('/home', 'FrontController@home');
+        Route::Get('/aboutUs', 'FrontController@aboutUs');
+        Route::Get('/company-services', 'FrontController@services');
+        Route::Get('/consultancy-approach', 'FrontController@consultancy');
+        Route::Get('/quality-managment', 'FrontController@qualityManagment');
+        Route::Get('/company-clients', 'FrontController@clients');
+        Route::Get('/company-news', 'FrontController@news');
+        Route::Get('/contactUs', 'FrontController@contactUs');
+    });
+
+    Route::get('/lang/{lang}' , function($lang){
+        if($lang == 'ar')
+            session()->put('lang','ar');
+        else
+            session()->put('lang','en');
+        return back();
+    });
 
     Auth::routes();
 });
