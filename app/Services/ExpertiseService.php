@@ -133,4 +133,13 @@ class ExpertiseService
     {
         return Expertise::find($expertiseId)->delete();
     }
+
+    /**
+     * get expertises front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function expertisesHome()
+    {
+        return Expertise::get();
+    }
 }

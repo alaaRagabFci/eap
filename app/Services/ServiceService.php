@@ -133,4 +133,13 @@ class ServiceService
     {
         return Service::find($serviceId)->delete();
     }
+
+    /**
+     * get services front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function servicesHome()
+    {
+        return Service::get();
+    }
 }

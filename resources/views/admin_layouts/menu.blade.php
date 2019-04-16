@@ -93,3 +93,11 @@
     </a>
 </li>
 
+<li class="nav-item {{Request::is('profiles') ? 'start active open':'' }}">
+    <a href="{{ url('/profiles') }}" class="nav-link nav-toggle">
+        <i class="fa fa-user"></i>
+        <span class="title">Download our profile</span>
+        <span class="selected"></span>
+    </a>
+</li>
+

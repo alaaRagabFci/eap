@@ -133,4 +133,13 @@ class ConsultancyService
     {
         return Consultance::find($consultanceId)->delete();
     }
+
+    /**
+     * get $consultancies front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function consultancyHome()
+    {
+        return Consultance::get();
+    }
 }

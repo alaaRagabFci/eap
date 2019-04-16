@@ -28,7 +28,7 @@ class AboutUsService
      * @return datatable.
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function datatables($about)
+     public function datatables($about)
     {
         $tableData = Datatables::of($about)
             ->editColumn('image', '<a href="javascript:;"><img src="{{ config("app.baseUrl").$image }}" class="image" width="50px" height="50px"></a>')
@@ -132,5 +132,14 @@ class AboutUsService
     public function deleteAboutUs($aboutId)
     {
         return AboutUs::find($aboutId)->delete();
+    }
+
+    /**
+     * get about front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function aboutUsHome()
+    {
+        return AboutUs::get();
     }
 }

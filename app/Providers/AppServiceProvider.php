@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\News;
 use App\Models\Service;
 use App\Models\Client;
+use App\Models\Setting;
 use Session;
 
 class AppServiceProvider extends ServiceProvider
@@ -37,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
                 return 'ar';
         });
 
+        view()->share('settings', Setting::count());
         view()->share('projects', Project::count());
         view()->share('news', News::count());
         view()->share('services', Service::count());

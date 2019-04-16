@@ -66,6 +66,10 @@ Route::group(['middleware' => ['web']], function () {
         Route::Post('/news/store', 'NewController@store');
         Route::Post('/news/update', 'NewController@update');
         Route::Resource('/news', 'NewController');
+        //download our profile
+        Route::Post('/profiles/store', 'ProfileController@store');
+        Route::Post('/profiles/update', 'ProfileController@update');
+        Route::Resource('/profiles', 'ProfileController');
     });
     Route::group(['namespace' => 'Front', 'middleware' => 'lang'], function () {
         Route::Get('/home', 'FrontController@home');
@@ -85,7 +89,6 @@ Route::group(['middleware' => ['web']], function () {
             session()->put('lang','en');
         return back();
     });
-
     Auth::routes();
 });
 

@@ -118,4 +118,13 @@ class ClientService
     {
         return Client::find($clientId)->delete();
     }
+
+    /**
+     * get clients front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function clientsHome()
+    {
+        return Client::get();
+    }
 }

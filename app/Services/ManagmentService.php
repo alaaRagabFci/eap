@@ -133,4 +133,13 @@ class ManagmentService
     {
         return Managment::find($managmentId)->delete();
     }
+
+    /**
+     * get managment front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function managmentHome()
+    {
+        return Managment::get();
+    }
 }

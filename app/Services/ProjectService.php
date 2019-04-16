@@ -133,4 +133,13 @@ class ProjectService
     {
         return Project::find($projectId)->delete();
     }
+
+    /**
+     * get projects front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function projectsHome()
+    {
+        return Project::get();
+    }
 }

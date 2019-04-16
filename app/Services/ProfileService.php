@@ -3,10 +3,10 @@
 namespace App\Services;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Yajra\Datatables\Datatables as Datatables;
-use App\Models\News;
+use App\Models\Profile;
 use App\Services\UtilityService;
 
-class NewService
+class ProfileService
 {
     private $utilityService;
     public function __construct(UtilityService $utilityService){
@@ -14,27 +14,27 @@ class NewService
     }
 
     /**
-     * List all News.
+     * List all Profile.
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function listNews()
+    public function listProfiles()
     {
-        return News::get();
+        return Profile::get();
     }
 
     /**
      * Datatebles
-     * @param news
+     * @param profile
      * @return datatable.
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function datatables($news)
+    public function datatables($profiles)
     {
-        $tableData = Datatables::of($news)
+        $tableData = Datatables::of($profiles)
             ->editColumn('image', '<a href="javascript:;"><img src="{{ config("app.baseUrl").$image }}" class="image" width="50px" height="50px"></a>')
             ->addColumn('actions', function ($data)
             {
-                return view('partials.actionBtns')->with('controller','news')
+                return view('partials.actionBtns')->with('controller','profiles')
                     ->with('id', $data->id)
                     ->render();
             })->rawColumns(['actions','image'])->make(true);
@@ -43,25 +43,25 @@ class NewService
     }
 
     /**
-     * Get news.
-     * @param $newsId
-     * @return News
+     * Get profile.
+     * @param $profileId
+     * @return Profile
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function getNews($newsId)
+    public function getProfile($profileId)
     {
         try {
-            $news = News::findOrFail($newsId);
-            return $news;
+            $profile = Profile::findOrFail($profileId);
+            return $profile;
         }
         catch(ModelNotFoundException $ex){
-            return array('status' => 'false', 'message' => 'News not found');
+            return array('status' => 'false', 'message' => 'Profile not found');
         }
     }
 
     /**
-     * Create news.
-     * @param $newsId
+     * Create profile.
+     * @param $profileId
      * @param $title_ar
      * @param $title_en
      * @param $description_ar
@@ -70,7 +70,7 @@ class NewService
      * @param $page
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function createNews($parameters)
+    public function createProfile($parameters)
     {
         try {
             if(isset($parameters['image']) && $parameters['image'] != ""){
@@ -82,8 +82,8 @@ class NewService
                 return array('status' => false, 'message' => 'Image required');
             }
 
-            $news = new News();
-            $news->create($parameters);
+            $profile = new Profile();
+            $profile->create($parameters);
             return response(array('msg' => 'Entity created'), 200);
         }
         catch(ModelNotFoundException $ex){
@@ -92,8 +92,8 @@ class NewService
     }
 
     /**
-     * Update news.
-     * @param $newsId
+     * Update profile.
+     * @param $profileId
      * @param $title_ar
      * @param $title_en
      * @param $description_ar
@@ -102,10 +102,10 @@ class NewService
      * @param $page
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function updateNews($newsId, $parameters, $images, $image)
+    public function updateProfile($profileId, $parameters, $images, $image)
     {
         try {
-            $news = News::findOrFail($newsId);
+            $profile = Profile::findOrFail($profileId);
             if(isset($images['image']) && $images['image'] != ""){
                 $data = $this->utilityService->uploadImage($images['image']);
                 if(!$data['status'])
@@ -115,7 +115,7 @@ class NewService
                 $parameters['image']  = $image;
             }
 
-            $news->update($parameters);
+            $profile->update($parameters);
             return response(array('msg' => 'Entity updated'), 200);
         }
         catch(ModelNotFoundException $ex){
@@ -124,22 +124,13 @@ class NewService
     }
 
     /**
-     * Delete news.
-     * @param $newsId
-     * @return News
+     * Delete profile.
+     * @param $profileId
+     * @return Profile
      * @author Alaa <alaaragab34@gmail.com>
      */
-    public function deleteNews($newsId)
+    public function deleteProfile($profileId)
     {
-        return News::find($newsId)->delete();
-    }
-
-    /**
-     * get news front.
-     * @author Alaa <alaaragab34@gmail.com>
-     */
-    static function newsHome()
-    {
-        return News::get();
+        return Profile::find($profileId)->delete();
     }
 }

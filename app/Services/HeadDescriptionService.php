@@ -133,4 +133,13 @@ class HeadDescriptionService
     {
         return Description::find($descriptionId)->delete();
     }
+
+    /**
+     * get about.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function getHeadDescription($page)
+    {
+        return Description::where('page', $page)->first();
+    }
 }
