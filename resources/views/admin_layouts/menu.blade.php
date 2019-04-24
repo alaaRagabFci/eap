@@ -67,14 +67,7 @@
 <li class="nav-item {{Request::is('clients') ? 'start active open':'' }}">
     <a href="{{ url('/clients') }}" class="nav-link nav-toggle">
         <i class="fas fa-handshake"></i>
-        <span class="title">Clients</span>
-        <span class="selected"></span>
-    </a>
-</li>
-<li class="nav-item {{Request::is('publications') ? 'start active open':'' }}">
-    <a href="{{ url('/publications') }}" class="nav-link nav-toggle">
-        <i class="fa fa-align-justify"></i>
-        <span class="title">Publications</span>
+        <span class="title">Clients & Partners</span>
         <span class="selected"></span>
     </a>
 </li>
@@ -97,6 +90,14 @@
     <a href="{{ url('/profiles') }}" class="nav-link nav-toggle">
         <i class="fa fa-user"></i>
         <span class="title">Download our profile</span>
+        <span class="selected"></span>
+    </a>
+</li>
+
+<li class="nav-item {{Request::is('publications') ? 'start active open':'' }}">
+    <a href="{{ url('/publications') }}" class="nav-link nav-toggle">
+        <i class="fa fa-align-justify"></i>
+        <span class="title">Publications</span>
         <span class="selected"></span>
     </a>
 </li>

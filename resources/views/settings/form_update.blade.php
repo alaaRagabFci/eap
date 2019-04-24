@@ -51,6 +51,12 @@
 </div>
 
 <div class="form-group">
+    <label for="exampleInputPassword1">Box number#</label>
+    <input type="text" name="box_number" required class="form-control">
+    <span class="help-block with-errors errorName"></span>
+</div>
+
+<div class="form-group">
     <label for="exampleInputPassword1">Facebook</label>
     <input type="url" name="facebook" required class="form-control">
     <span class="help-block with-errors errorName"></span>

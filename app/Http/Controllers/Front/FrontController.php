@@ -16,14 +16,16 @@ class FrontController extends AbstractController {
 
     //homePage
     public function home()
-    {}
+    {
+        return view('front.home');
+    }
 
     //aboutUs
     public function aboutUs()
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('ABOUTUS');
         $aboutUs = AboutUsService::aboutUsHome();
-        return view('dashboard',compact('headDescriptions', 'aboutUs'));
+        return view('front.about',compact('headDescriptions', 'aboutUs'));
     }
 
     //services
@@ -33,7 +35,7 @@ class FrontController extends AbstractController {
         $services = ServiceService::servicesHome();
         $projects = ProjectService::projectsHome();
         $expertises = ExpertiseService::expertisesHome();
-        return view('dashboard',compact('headDescriptions','services', 'projects', 'expertises'));
+        return view('front.services',compact('headDescriptions','services', 'projects', 'expertises'));
     }
 
     //consultancy
@@ -41,7 +43,7 @@ class FrontController extends AbstractController {
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('CONSULTANCY');
         $consultancies = ConsultancyService::consultancyHome();
-        return view('dashboard',compact('headDescriptions', 'consultancies'));
+        return view('front.consultancy-approach',compact('headDescriptions', 'consultancies'));
     }
 
     //qualityManagment
@@ -49,7 +51,7 @@ class FrontController extends AbstractController {
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('MANAGMENT');
         $managments = ManagmentService::managmentHome();
-        return view('dashboard',compact('headDescriptions', 'managments'));
+        return view('front.quality-management',compact('headDescriptions', 'managments'));
     }
 
     //clients
@@ -57,7 +59,7 @@ class FrontController extends AbstractController {
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('CLIENTS');
         $clients = ClientService::clientsHome();
-        return view('dashboard',compact('headDescriptions', 'clients'));
+        return view('front.clients-partners',compact('headDescriptions', 'clients'));
     }
 
     //news
@@ -65,11 +67,12 @@ class FrontController extends AbstractController {
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('NEWS');
         $news = NewService::newsHome();
-        return view('dashboard',compact('headDescriptions', 'news'));
+        return view('front.news-publications',compact('headDescriptions', 'news'));
     }
 
     //contactUs
     public function contactUs()
     {
+        return view('front.contact-us');
     }
 }

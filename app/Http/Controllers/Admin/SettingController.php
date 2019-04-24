@@ -60,6 +60,7 @@ class SettingController extends AbstractController {
      *      {"name"="facebook", "dataType"="String", "requirement"="\d+", "description"="facebook"},
      *      {"name"="google", "dataType"="String", "requirement"="\d+", "description"="google"},
      *      {"name"="twitter", "dataType"="String", "requirement"="\d+", "description"="twitter"},
+     *      {"name"="box_number", "dataType"="Integer", "requirement"="\d+", "description"="box number"},
      *  }
      * @author Alaa <alaaragab34@gmail.com>
      */
