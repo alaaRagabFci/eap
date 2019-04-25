@@ -47,19 +47,15 @@
                                 <div class="path">
                                     <div class="path">
 
-                                        <img src="" class="icon" alt="">
+                                        <img src="{{ asset($headDescriptionsExpertises->image) }}" class="icon" alt="">
                                     </div>
                                 </div>
                                 <div class="path"></div>
                             </div>
 
                             <div class="data-details">
-                                <h3>Our Expertise</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                    velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                    ullam.
-                                </p>
+                                <h3>{{ translation($headDescriptionsExpertises,'title') }}</h3>
+                                <p>{{ translation($headDescriptionsExpertises,'description') }}</p>
                             </div>
                         </section>
                         <section class="extra-data">
@@ -74,17 +70,15 @@
                                 <div class="path">
                                     <div class="path">
 
-                                        <img src="" class="icon" alt="">
+                                        <img src="{{ asset($headDescriptionsServices->image) }}" class="icon" alt="">
                                     </div>
                                 </div>
                                 <div class="path"></div>
                             </div>
+
                             <div class="data-details">
-                                <h3>Our Services</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                    velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                    ullam.</p>
+                                <h3>{{ translation($headDescriptionsServices,'title') }}</h3>
+                                <p>{{ translation($headDescriptionsServices,'description') }}</p>
                             </div>
                         </section>
                         <section class="extra-data">
@@ -110,18 +104,15 @@
                                 <div class="path">
                                     <div class="path">
 
-                                        <img src="" class="icon" alt="">
+                                        <img src="{{ asset($headDescriptionsProjects->image) }}" class="icon" alt="">
                                     </div>
                                 </div>
                                 <div class="path"></div>
                             </div>
 
                             <div class="data-details">
-                                <h3>Our Projects</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                    velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                    ullam.</p>
+                                <h3>{{ translation($headDescriptionsProjects,'title') }}</h3>
+                                <p>{{ translation($headDescriptionsProjects,'description') }}</p>
                             </div>
                         </section>
                         <section class="extra-data">

@@ -8,15 +8,15 @@
             <div id="tabs">
                 <section class="main-title">
                     <div></div>
-                    <h2>CONTACT US FOR PUBLICATIONS</h2>
+                    <h2>{{ trans('front.contactUsForPublications') }}</h2>
                 </section>
                 <section class="contact">
                     <form>
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <input type="text" placeholder="Phone">
-                        <textarea name="msg" id="" cols="30" rows="10" placeholder="Details"></textarea>
-                        <button class="btn w-100" type="button">SEND MESSAGE</button>
+                        <input type="text" placeholder="{{ trans('front.name') }}">
+                        <input type="email" placeholder="{{ trans('front.email') }}">
+                        <input type="text" placeholder="{{ trans('front.phone') }}">
+                        <textarea name="msg" id="" cols="30" rows="10" placeholder="{{ trans('front.details') }}"></textarea>
+                        <button class="btn w-100" type="button">{{ trans('front.send') }}</button>
                     </form>
                     <div class="map"></div>
                 </section>

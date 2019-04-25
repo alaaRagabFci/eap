@@ -13,11 +13,11 @@
                     </section>
                     <ul class="nav nav-tabs">
                         <li><a data-toggle="tab" href="#menu1">
-                                <div class="tab-triangle"><span>1</span></div> Technical Assistance and Financing
+                                <div class="tab-triangle"><span>1</span></div> {{ trans('front.clients1') }}
                                 Agencies
                             </a></li>
                         <li><a data-toggle="tab" href="#menu2">
-                                <div class="tab-triangle"><span>2</span></div> Some Beneficiary Organizations
+                                <div class="tab-triangle"><span>2</span></div> {{ trans('front.partners1') }}
                             </a></li>
 
                     </ul>
@@ -42,27 +42,23 @@
                         </div>
                         <div id="menu1" class="notShow tab-pane fade">
                             <section class="row">
-                                <div class="col-6">
-                                    <div class="triangle-list"><span>1</span></div>
-                                    <h4>hello alaa</h4>
-                                </div>
-                                <div class="col-6">
-                                    <div class="triangle-list"><span>2</span></div>
-                                    <h4>hello alaa</h4>
-                                </div>
+                                @for ($i = 0; $i < count($clients); $i++)
+                                    <div class="col-6">
+                                        <div class="triangle-list"><span>{{$i+1}}</span></div>
+                                        <h4>{{ translation($clients[$i],'name') }}</h4>
+                                    </div>
+                                @endfor
                             </section>
                         </div>
 
                         <div id="menu2" class="notShow tab-pane fade">
                             <section class="row">
-                                <div class="col-6">
-                                    <div class="triangle-list"><span>1</span></div>
-                                    <h4>hello alaa</h4>
-                                </div>
-                                <div class="col-6">
-                                    <div class="triangle-list"><span>2</span></div>
-                                    <h4>hello alaa</h4>
-                                </div>
+                                @for ($i = 0; $i < count($partners); $i++)
+                                    <div class="col-6">
+                                        <div class="triangle-list"><span>{{$i+1}}</span></div>
+                                        <h4>{{ translation($partners[$i],'name') }}</h4>
+                                    </div>
+                                @endfor
                             </section>
                         </div>
 

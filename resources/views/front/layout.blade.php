@@ -25,7 +25,7 @@
     <header>
         <nav class="navbar navbar-expand-md">
             <a class="navbar-brand" href="#main">
-                <img src="../EAP/assets/logo1.svg" alt="">
+                <img src="{{ asset($setting->logo_ar) }}" alt="">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
 
             </div>
             <a class="navbar-brand" href="#main">
-                <img src="../EAP/assets/logo2.png" alt="">
+                <img src="{{ asset($setting->logo_en) }}" alt="">
             </a>
         </nav>
     </header>
@@ -78,11 +78,12 @@
     <footer>
         <div class="data-footer row m-0">
             <div class="rows col-lg col-md-6 col-sm-6 col-12">
-                <a><img alt="" src="../EAP/assets/Logo.svg" class="mb-3"></a>
-                <a href="mailto:info@eap.com"><i class="fas fa-envelope"></i> info@eap.com</a>
+                <a><img alt="" src="{{ asset('/admin_ui/assets/Logo.svg') }}" class="mb-3"></a>
+                <a href="mailto:info@eap.com"><i class="fas fa-envelope"></i> {{ $setting->email }}</a>
                 <a target="_blank" href="https://maps.google.com/?q=46.860191,3.779297"><i class="fas fa-map-marker-alt"></i>
-                    481 Park Boulevard, Trur oIowa</a>
-                <a href="tel:+2(012)3456789"><i class="fas fa-phone-volume"></i> +2 (012) 345 678 9</a>
+                    {{ translation($setting, 'location') }}</a>
+                <?php $phones = explode("-", $setting->phone); ?>
+                <a href="tel:<?php echo $phones[0]; ?>"><i class="fas fa-phone-volume"></i><?php echo $phones[0].  ' / ' .$phones[1]; ?> </a>
             </div>
             <div class="rows col-lg col-md-6 col-sm-6 col-12">
                 <p>{{ trans('front.company') }}</p>

@@ -37,7 +37,8 @@ class AppServiceProvider extends ServiceProvider
             else
                 return 'ar';
         });
-
+        $setting = Setting::first();
+        view()->share('setting', $setting);
         view()->share('settings', Setting::count());
         view()->share('projects', Project::count());
         view()->share('news', News::count());

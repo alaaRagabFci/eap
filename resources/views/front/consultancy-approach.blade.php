@@ -11,14 +11,13 @@
                     <h2> {{ trans('front.consultancy') }}</h2>
                 </section>
                 <ul class="nav nav-tabs">
-                    <li class="active-tab"><a data-toggle="tab" href="#menu1">
-                            <div class="tab-triangle"><span>1</span></div> Overall Consultancy Approach
-                        </a></li>
-                    <li><a data-toggle="tab" href="#menu2">
-                            <div class="tab-triangle"><span>2</span></div> Capacity Support” and “Performance
-                            Improvement
-                        </a></li>
-
+                    @for ($i = 0; $i < count($consultancies); $i++)
+                        <li>
+                            <a data-toggle="tab" href="#menu{{ $i+1 }}">
+                            <div class="tab-triangle"><span>{{ $i+1 }}</span></div> {{ translation($consultancies[$i],'title') }}
+                            </a>
+                        </li>
+                    @endfor
                 </ul>
 
                 <div class="tab-content">
@@ -39,46 +38,24 @@
                         </section>
 
                     </div>
-                    <div id="menu1" class="notShow  tab-pane fade">
+                    @for ($i = 0; $i < count($consultancies); $i++)
+                        <div id="menu{{$i+1}}" class="notShow  tab-pane fade">
                         <section>
                             <div class="shape">
                                 <div class="path">
                                     <div class="path">
-                                        <img src="../assets/logo1.svg" alt="">
+                                        <img src="{{ asset($consultancies[$i]->image) }}" alt="">
                                     </div>
                                 </div>
                                 <div class="path"></div>
                             </div>
                             <div class="data-details">
-                                <h3>CONSULTANCY APPROACH</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                    velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                    ullam.
-                                </p>
+                                <h3>{{ translation($consultancies[$i],'title') }}</h3>
+                                <p>{{ translation($consultancies[$i],'description') }}</p>
                             </div>
                         </section>
                     </div>
-                    <div id="menu2" class="notShow tab-pane fade">
-                        <section>
-                            <div class="shape">
-                                <div class="path">
-                                    <div class="path">
-                                        <img src="../assets/logo1.svg" alt="">
-                                    </div>
-                                </div>
-                                <div class="path"></div>
-                            </div>
-                            <div class="data-details">
-                                <h3>Capacity Support” and “Performance Improvement</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                    velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                    ullam.</p>
-                            </div>
-                        </section>
-                    </div>
-
+                    @endfor
                 </div>
             </div>
         </section>

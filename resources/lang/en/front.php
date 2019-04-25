@@ -19,4 +19,12 @@ return [
     'emailAddress'     => 'Your email address',
     'sendMessage'     => 'SEND MESSAGE',
     'contactDetails'     => 'CONTACT DETAILS',
+    'clients1'   => 'Technical Assistance and Financing',
+    'partners1'   => 'Some Beneficiary Organizations',
+    'contactUsForPublications' => 'CONTACT US FOR PUBLICATIONS',
+    'name' => 'Name',
+    'email' => 'Email',
+    'phone' => 'Phone',
+    'details' => 'Details',
+    'send' => 'SEND MESSAGE'
 ];

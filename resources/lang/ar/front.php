@@ -19,4 +19,12 @@ return [
     'emailAddress'     => 'بريدك الألكتروني',
     'sendMessage'      => 'أرسال رساله',
     'contactDetails'   => 'وسائل الأتصال',
+    'clients1'   => 'المساعدة الفنية والتمويل',
+    'partners1'   => 'بعض المنظمات المستفيدة',
+    'contactUsForPublications' => 'اتصل بنا للنشر',
+    'name' => 'الأسم',
+    'email' => 'البريد الألكتروني',
+    'phone' => 'رقم الهاتف',
+    'details' => 'التفاصيل',
+    'send' => 'أرسال'
 ];

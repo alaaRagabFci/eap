@@ -125,6 +125,15 @@ class ClientService
      */
     static function clientsHome()
     {
-        return Client::get();
+        return Client::where('type_id', 1)->get();
+    }
+
+    /**
+     * get partners front.
+     * @author Alaa <alaaragab34@gmail.com>
+     */
+    static function partnersHome()
+    {
+        return Client::where('type_id', 2)->get();
     }
 }

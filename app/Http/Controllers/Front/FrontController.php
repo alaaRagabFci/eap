@@ -32,10 +32,13 @@ class FrontController extends AbstractController {
     public function services()
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('WORK');
+        $headDescriptionsProjects = HeadDescriptionService::getHeadDescription('PROJECTS');
+        $headDescriptionsServices = HeadDescriptionService::getHeadDescription('SERVICES');
+        $headDescriptionsExpertises = HeadDescriptionService::getHeadDescription('EXPERTISES');
         $services = ServiceService::servicesHome();
         $projects = ProjectService::projectsHome();
         $expertises = ExpertiseService::expertisesHome();
-        return view('front.services',compact('headDescriptions','services', 'projects', 'expertises'));
+        return view('front.services',compact('headDescriptions', 'headDescriptionsProjects', 'headDescriptionsServices', 'headDescriptionsExpertises','services', 'projects', 'expertises'));
     }
 
     //consultancy
@@ -59,7 +62,8 @@ class FrontController extends AbstractController {
     {
         $headDescriptions = HeadDescriptionService::getHeadDescription('CLIENTS');
         $clients = ClientService::clientsHome();
-        return view('front.clients-partners',compact('headDescriptions', 'clients'));
+        $partners = ClientService::partnersHome();
+        return view('front.clients-partners',compact('headDescriptions', 'clients', 'partners'));
     }
 
     //news

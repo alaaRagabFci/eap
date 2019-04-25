@@ -12,14 +12,13 @@
                                 <h2> {{ trans('front.managment') }}</h2>
                             </section>
                             <ul class="nav nav-tabs">
-                                <li><a data-toggle="tab" href="#menu1">
-                                        <div class="tab-triangle"><span>1</span></div> Overall Consultancy Approach
-                                    </a></li>
-                                <li><a data-toggle="tab" href="#menu2">
-                                        <div class="tab-triangle"><span>2</span></div> Capacity Support” and “Performance
-                                        Improvement
-                                    </a></li>
-            
+                                @for ($i = 0; $i < count($managments); $i++)
+                                    <li>
+                                        <a data-toggle="tab" href="#menu{{ $i+1 }}">
+                                            <div class="tab-triangle"><span>{{ $i+1 }}</span></div> {{ translation($managments[$i],'title') }}
+                                        </a>
+                                    </li>
+                                @endfor
                             </ul>
             
                             <div class="tab-content">
@@ -40,46 +39,24 @@
                                     </section>
             
                                 </div>
-                                <div id="menu1" class="notShow  tab-pane fade">
-                                    <section>
-                                        <div class="shape">
-                                            <div class="path">
+                                @for ($i = 0; $i < count($managments); $i++)
+                                    <div id="menu{{$i+1}}" class="notShow  tab-pane fade">
+                                        <section>
+                                            <div class="shape">
                                                 <div class="path">
-                                                    <img src="../assets/logo1.svg" alt="">
+                                                    <div class="path">
+                                                        <img src="{{ asset($managments[$i]->image) }}" alt="">
+                                                    </div>
                                                 </div>
+                                                <div class="path"></div>
                                             </div>
-                                            <div class="path"></div>
-                                        </div>
-                                        <div class="data-details">
-                                            <h3>Overall Quality Management</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                                velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                                ullam.
-                                            </p>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div id="menu2" class="notShow tab-pane fade">
-                                    <section>
-                                        <div class="shape">
-                                            <div class="path">
-                                                <div class="path">
-                                                    <img src="../assets/logo1.svg" alt="">
-                                                </div>
+                                            <div class="data-details">
+                                                <h3>{{ translation($managments[$i],'title') }}</h3>
+                                                <p>{{ translation($managments[$i],'description') }}</p>
                                             </div>
-                                            <div class="path"></div>
-                                        </div>
-                                        <div class="data-details">
-                                            <h3>Programmes/ Projects Quality Management</h3>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                                Laborum molestiae, provident dolore harum ab nihil consequuntur ratione cum
-                                                velit vero iste expedita totam dolorem ipsum dignissimos sapiente placeat? At,
-                                                ullam.</p>
-                                        </div>
-                                    </section>
-                                </div>
-            
+                                        </section>
+                                    </div>
+                                @endfor
                             </div>
                         </div>
                     </section>
