@@ -72,7 +72,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::Resource('/profiles', 'ProfileController');
     });
     Route::group(['namespace' => 'Front', 'middleware' => 'lang'], function () {
-        Route::Get('/home', 'FrontController@home');
+        Route::Get('/', 'FrontController@home');
         Route::Get('/aboutUs', 'FrontController@aboutUs');
         Route::Get('/company-services', 'FrontController@services');
         Route::Get('/consultancy-approach', 'FrontController@consultancy');

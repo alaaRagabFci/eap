@@ -24,7 +24,7 @@
 <div class="main" id="main">
     <header>
         <nav class="navbar navbar-expand-md">
-            <a class="navbar-brand" href="#main">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset($setting->logo_ar) }}" alt="">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -33,8 +33,8 @@
             </button>
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="{{Request::is('home') ? 'active':''}}">
-                        <a class="nav-link" href="{{ url('/home') }}">{{ trans('front.home') }}</a>
+                    <li class="{{Request::is('/') ? 'active':''}}">
+                        <a class="nav-link" href="{{ url('/') }}">{{ trans('front.home') }}</a>
                     </li>
                     <li class="{{Request::is('aboutUs') ? 'active':''}}">
                         <a class="nav-link" href="{{ url('/aboutUs') }}">{{ trans('front.about_us') }}</a>
@@ -67,7 +67,7 @@
                 </ul>
 
             </div>
-            <a class="navbar-brand" href="#main">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset($setting->logo_en) }}" alt="">
             </a>
         </nav>
