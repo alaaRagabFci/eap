@@ -5,8 +5,26 @@
 
 @section('content')
     <section id="content">
-      <section id="home-hero"></section>
-      <section id="home-data">
+      <section id="home-hero">
+      <div class="row">
+        <div class="col-4 earth">
+        <img src="admin_ui/assets/hero/Earth.png" alt="">
+        </div>
+        <div class="col-8">
+          <div class="d-flex">
+            <img src="admin_ui/assets/hero/Group405.svg" alt="">
+            <img src="admin_ui/assets/hero/Group406.svg" alt="">
+          </div>
+          <div>
+            <h3><span>EAP </span> for Consultancy & Training</h3>
+          </div>
+          <div>
+            <img src="admin_ui/assets/hero/Group407.svg" alt="">
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="home-data" class="p-2">
         @if (App::getLocale() == 'en')
         <div class="row mx-auto mt-5">
           <div class="col-12">
@@ -81,7 +99,7 @@
               <span class="sm-trianngle">
               </span>
               <span class="text">02</span>
-              <span class="text-bottom-2">الخبرة , الخدمات & المشاريع</span>
+              <span class="text-bottom-2">الخبرة ,<br> الخدمات & المشاريع</span>
             </span>
             </div>
             <div class="col-6">
@@ -113,7 +131,7 @@
               <span class="sm-trianngle">
               </span>
               <span class="text">06</span>
-              <span class="text-bottom-4">الأخبار والمنشورات</span>
+              <span class="text-bottom-4 bottom-6">الأخبار والمنشورات</span>
             </span>
             </div>
             <div class="col-3">

@@ -5,7 +5,7 @@ $yellow-color: #fdc501;
 $tabs-default-color: #ACACAC;
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Tajawal', sans-serif;
   background: #f3f3f3;
 }
 
@@ -15,9 +15,12 @@ body {
 }
 
 #content {
+  direction: rtl;
 
   // home
   #home-data {
+    direction: rtl;
+
     .row {
       text-align: center;
       max-width: 1140px;
@@ -28,11 +31,11 @@ body {
       }
 
       div:nth-child(2) {
-        padding-left: 8em;
+        padding-right: 8em;
       }
 
       div:nth-child(3) {
-        padding-right: 8em;
+        padding-left: 8em;
       }
 
       .triangle {
@@ -76,11 +79,11 @@ body {
 
         .text-bottom-1 {
           bottom: -6.5em;
-          right: -2.5em;
+          right: -1.5em;
         }
 
         .text-bottom-6 {
-          right: -3em;
+          right: -1.5em;
           bottom: -6.5em;
         }
 
@@ -92,19 +95,25 @@ body {
         .text-bottom-3,
         .text-bottom-4,
         .text-bottom-5 {
-          bottom: -7.2em;
+          bottom: -7em;
         }
 
         .text-bottom-3 {
-          left: -3em;
+          left: -3.5em;
         }
 
         .text-bottom-4 {
-          right: -3em;
+          right: -2.5em;
         }
 
+        .bottom-6 {
+          right: -4em !important;
+        }
+
+
+
         .text-bottom-5 {
-          right: -2em;
+          right: -3em;
         }
       }
     }
@@ -112,7 +121,7 @@ body {
 
   #home-hero {
     padding: 5%;
-    // height: calc(100vh - 135px);
+    direction: rtl;
     background-image: linear-gradient(to bottom, #132c47, #122d4c, #102f51, #0f3055, #0f315a,
         #133763, #163e6c, #1a4475, #225185, #295e95, #306ca5, #377ab5);
 
@@ -190,7 +199,7 @@ body {
         width: 0;
         height: 0;
         border-style: solid;
-        margin: -1em -3.5em 0 0;
+        margin: -1em 0 0 -3.5em;
         border-width: 0 53px 60px 53px;
         border-color: transparent transparent $yellow-color transparent;
       }
@@ -242,7 +251,7 @@ body {
           border-style: solid;
           border-width: 0 29.415px 33px 29.415px;
           border-color: transparent transparent $tabs-default-color transparent;
-          margin-bottom: -7px;
+          margin-bottom: -6px;
           margin-left: -1px;
 
           span {
@@ -280,16 +289,16 @@ body {
           }
 
           .path:nth-child(1) {
-            -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);
-            clip-path: polygon(100% 0, 0 50%, 100% 100%);
+            -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+            clip-path: polygon(100% 50%, 0 0, 0 100%);
           }
 
           .path:nth-child(2) {
-            -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
-            clip-path: polygon(0 0, 100% 50%, 0 100%);
+            -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%);
             position: absolute;
             top: 150px;
-            right: 0;
+            left: 0;
             background: rgba($color: $yellow-color, $alpha: 0.2);
           }
 
@@ -321,9 +330,10 @@ body {
 
 
         .data-details {
+          text-align: right;
           position: absolute;
           top: 0;
-          left: 35%;
+          right: 35%;
 
           h3 {
             margin: 1em 0;
@@ -342,7 +352,7 @@ body {
 
       .col-6 {
         display: flex;
-        justify-content: left;
+        justify-content: right;
         margin-bottom: 20px;
 
         .triangle-list {
@@ -362,16 +372,17 @@ body {
         }
 
         h4 {
+          text-align: right;
           display: inline-block;
           padding-top: 0.5em;
-          padding-left: 1em;
+          padding-right: 1em;
           font-size: 1em;
         }
       }
 
       .download-btn {
-        -webkit-clip-path: polygon(0% 0%, 85% 0, 100% 50%, 85% 100%, 0% 100%);
-        clip-path: polygon(0% 0%, 85% 0, 100% 50%, 85% 100%, 0% 100%);
+        -webkit-clip-path: polygon(15% 0%, 100% 0, 100% 100%, 15% 100%, 0 50%);
+        clip-path: polygon(15% 0%, 100% 0, 100% 100%, 15% 100%, 0 50%);
         width: 225px;
         height: 50px;
         background: $yellow-color;
@@ -385,7 +396,7 @@ body {
         border-radius: 3px;
         border: 1px $yellow-color solid;
         width: fit-content;
-        float: right;
+        float: left;
         padding: 5px;
 
       }
@@ -474,7 +485,7 @@ body {
     width: 60%;
     background: $blue-color;
     border-radius: 5px;
-    margin: 0 0 0 20px;
+    margin: 0 20px 0 0;
   }
 }
 
@@ -487,6 +498,10 @@ header {
 
   nav {
     padding-right: 0 !important;
+
+    .navbar-collapse {
+      direction: rtl;
+    }
 
     .navbar-nav {
       flex-wrap: wrap;
@@ -527,7 +542,7 @@ header {
 
       a {
         color: white;
-        font-family: 'Tajawal', sans-serif;
+        font-family: "Poppins", sans-serif;
 
       }
 
@@ -567,6 +582,7 @@ header {
 // footer
 footer {
   background: $dark-color;
+  direction: rtl;
 
   .data-footer {
     padding: 50px 15px 35px 15px;
@@ -574,6 +590,7 @@ footer {
     .rows {
       color: white;
       padding: 0 15px;
+      text-align: right;
 
       img {
         width: 140px;
@@ -597,7 +614,7 @@ footer {
         }
 
         i {
-          margin-right: 10px;
+          margin-left: 10px;
         }
       }
 
@@ -605,12 +622,12 @@ footer {
         padding: 15px 0;
 
         input {
-          border-radius: 3em 0 0 3em;
+          border-radius: 0 3em 3em 0 !important;
         }
 
         button {
           color: white;
-          border-radius: 0 3em 3em 0;
+          border-radius: 3em 0 0 3em !important;
           background: #377ab5;
         }
       }
@@ -618,7 +635,7 @@ footer {
       .social-Media {
         a {
           display: inline-block;
-          margin-right: 15px;
+          margin-left: 15px;
 
           i {
             width: 35px;
@@ -631,7 +648,7 @@ footer {
         }
 
         a:last-child {
-          margin-right: 0;
+          margin-left: 0;
         }
       }
     }
@@ -674,7 +691,7 @@ footer {
 
 @media (max-width: 1200px) {
   #content #tabs .tab-pane section .data-details {
-    left: 45%;
+    right: 45%;
   }
 
   .h-4 {
@@ -750,24 +767,14 @@ footer {
       right: -31px !important;
     }
 
-    .text-bottom-2 {
-      right: -4.7em !important;
-      bottom: -7em !important;
+    .text-bottom-1,
+    .text-bottom-3,
+    .text-bottom-4,
+    .text-bottom-6,
+    .text-bottom-5 {
+      bottom: -6em;
     }
 
-    .text-bottom-1 {
-      bottom: -6em !important;
-      right: -2.2em !important;
-    }
-
-    .text-bottom-6 {
-      bottom: -6em !important;
-      right: -2.8em !important;
-    }
-
-    .text-bottom-3 {
-      left: -3.25em !important;
-    }
   }
 
   #content #tabs .tab-pane section .data-details {
@@ -775,7 +782,7 @@ footer {
   }
 
   #content #tabs .main-title div {
-    margin: -1em -2.5em 0 0;
+    margin: -1em 0 0 -2.5em;
     border-width: 0 40px 50px 40px
   }
 
@@ -792,18 +799,12 @@ footer {
     }
 
     div:nth-child(2) {
-      padding-left: 5em;
+      padding-right: 5em;
     }
 
     div:nth-child(3) {
-      padding-right: 5em;
+      padding-left: 5em;
     }
-  }
-
-  #content #home-data .row .triangle .text-bottom-3,
-  #content #home-data .row .triangle .text-bottom-4,
-  #content #home-data .row .triangle .text-bottom-5 {
-    bottom: -6.6em !important;
   }
 
   #content #tabs .tab-pane section .data-details {
@@ -826,7 +827,7 @@ footer {
   }
 
   #content #tabs .tab-pane .col-6 h4 {
-    padding-left: 2em;
+    padding-right: 2em;
   }
 }
 
@@ -841,6 +842,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+  ul  {
+    padding: 0;
+  }
   .social-Media {
     text-align: center;
   }
@@ -865,7 +869,9 @@ footer {
 
   .navbar-nav {
     margin: 15px 0;
+    padding-right: 20px;
   }
+
 }
 
 @media (max-width: 695px) {
@@ -880,11 +886,11 @@ footer {
     }
 
     div:nth-child(2) {
-      padding-left: 0;
+      padding-right: 0;
     }
 
     div:nth-child(3) {
-      padding-right: 0;
+      padding-left: 0;
     }
   }
 }
@@ -964,14 +970,16 @@ footer {
   }
 
   #content #tabs .main-title div {
-    margin: -1em -2em 0 0;
+    margin: -1em  0 0 -2em;
     border-width: 0 30px 40px 30px;
   }
 
   p,
   a,
   .date,
-  .download-btn, ::placeholder, button {
+  .download-btn,
+  ::placeholder,
+  button {
     font-size: .8em !important;
   }
 
@@ -1049,9 +1057,11 @@ footer {
     line-height: 1.5;
   }
 }
-@media(max-width:325px){
+
+@media(max-width:325px) {
+
   #content #tabs .main-title h2,
-  #content #tabs .tab-pane section .data-details h3{
+  #content #tabs .tab-pane section .data-details h3 {
     font-size: .85em;
     line-height: 1.5;
   }
