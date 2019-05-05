@@ -204,7 +204,17 @@ body {
       #content #tabs .tab-pane section .data-details h3 {
         margin: 1em 0; }
   #content #tabs .tab-pane .extra-data {
-    text-align: center; }
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: -5em; }
+    #content #tabs .tab-pane .extra-data .item {
+      position: relative; }
+    #content #tabs .tab-pane .extra-data span {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     #content #tabs .tab-pane .extra-data img {
       max-width: 300px;
       margin: 0 20px 20px 20px; }
@@ -296,9 +306,14 @@ body {
     padding: 10px; }
   .contact .map {
     width: 60%;
-    background: #1b619e;
     border-radius: 5px;
     margin: 0 0 0 20px; }
+    .contact .map iframe {
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px; }
 
 header {
   position: sticky;
@@ -454,6 +469,9 @@ footer {
   footer .data-footer .rows img {
     width: 120px; }
 
+  #content #tabs .tab-pane .extra-data {
+    margin-top: 0; }
+
   #content #home-data .row .triangle {
     border-width: 0 5.2em 6.2em 5.2em !important; }
     #content #home-data .row .triangle span {
@@ -525,6 +543,9 @@ footer {
 @media (max-width: 768px) {
   .social-Media {
     text-align: center; }
+
+  .contact .map {
+    width: 50%; }
 
   footer .data-footer {
     padding: 30px 10px 0 10px; }

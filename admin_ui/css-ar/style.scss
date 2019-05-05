@@ -342,8 +342,19 @@ body {
       }
 
       .extra-data {
+        display: flex;
+        flex-wrap: wrap;
         text-align: center;
-
+        margin-top: -5em;
+        .item {
+          position: relative;
+        }
+        span {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
         img {
           max-width: 300px;
           margin: 0 20px 20px 20px;
@@ -483,9 +494,16 @@ body {
 
   .map {
     width: 60%;
-    background: $blue-color;
     border-radius: 5px;
     margin: 0 20px 0 0;
+
+    iframe {
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+    }
   }
 }
 
@@ -748,7 +766,9 @@ footer {
   footer .data-footer .rows img {
     width: 120px
   }
-
+  #content #tabs .tab-pane .extra-data {
+  margin-top: 0;
+}
   #content #home-data .row .triangle {
     border-width: 0 5.2em 6.2em 5.2em !important;
 
@@ -842,8 +862,11 @@ footer {
 }
 
 @media (max-width: 768px) {
-  ul  {
+  ul {
     padding: 0;
+  }
+  .contact .map {
+    width: 50%;
   }
   .social-Media {
     text-align: center;
@@ -970,7 +993,7 @@ footer {
   }
 
   #content #tabs .main-title div {
-    margin: -1em  0 0 -2em;
+    margin: -1em 0 0 -2em;
     border-width: 0 30px 40px 30px;
   }
 
