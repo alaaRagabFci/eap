@@ -59,9 +59,16 @@
                             </div>
                         </section>
                         <section class="extra-data">
-                            <img src="../assets/services/icon1-2.svg" alt="">
-                            <img src="../assets/services/icon1-1.svg" alt="">
-                            <img src="../assets/services/icon1.svg" alt="">
+                            <div class="item">
+                            <img src="admin_ui/assets/services/icon2-1.svg" alt="">
+                            <span>Public Sector</span>
+                            </div>
+                            <div class="item">
+                            <img src="admin_ui/assets/services/icon2-2.svg" alt="">
+                            <span>Private Sector</span></div>
+                            <div class="item">
+                            <img src="admin_ui/assets/services/icon2.svg" alt="">
+                            <span>Non-Governmental Sector</span></div>
                         </section>
                     </div>
                     <div id="menu2" class="blue-border notShow tab-pane fade">
@@ -83,18 +90,42 @@
                         </section>
                         <section class="extra-data">
                             <div>
-                                <img src="../assets/services/icon2-1.svg" alt="">
-                                <img src="../assets/services/icon2-2.svg" alt="">
-                                <img src="../assets/services/icon2-3.svg" alt="">
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon1.svg" alt="">
+                                <span>Project Management</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon2-3.svg" alt="">
+                                <span>Strategic Management</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon1-3.svg" alt="">
+                                <span>ID & OD</span>
+                                </div>
                             </div>
                             <div>
-                                <img src="../assets/services/icon2-4.svg" alt="">
-                                <img src="../assets/services/icon2-5.svg" alt="">
-                                <img src="../assets/services/icon2-6.svg" alt="">
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon2-7.svg" alt="">
+                                <span>HRM</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon2-5.svg" alt="">
+                                <span>HR Development</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon2-6.svg" alt="">
+                                <span>Economic & Financial Analysis</span>
+                                </div>
                             </div>
                             <div>
-                                <img src="../assets/services/icon2-7.svg" alt="">
-                                <img src="../assets/services/icon2-8.svg" alt="">
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon1-2.svg" alt="">
+                                <span>Socio-Economic Studies</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon2-4.svg" alt="">
+                                <span>Databases, MIS & GIS</span>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -117,14 +148,32 @@
                         </section>
                         <section class="extra-data">
                             <div>
-                                    <img src="../assets/services/icon3-1.svg" alt="">
-                                    <img src="../assets/services/icon3-2.svg" alt="">
-                                    <img src="../assets/services/icon3-3.svg" alt="">
+                                <div class="item">                                    
+                                <img src="admin_ui/assets/services/icon3.svg" alt="">
+                                <span>Public Sector: <br/> ID, OD & Systems Developments</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon3-3.svg" alt="">
+                                <span>Private Sector: <br/> ID, OD & Systems Developments</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon3-2.svg" alt="">
+                                <span>NGOs Related</span>
+                                </div>
                             </div>
                             <div>
-                                    <img src="../assets/services/icon3-4.svg" alt="">
-                                    <img src="../assets/services/icon3-5.svg" alt="">
-                                    <img src="../assets/services/icon3-6.svg" alt="">
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon3-1.svg" alt="">
+                                <span>Capacity Building & Awareness</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon3-5.svg" alt="">
+                                <span>Participatory Development/ Local Urban and Rual Development</span>
+                                </div>
+                                <div class="item">
+                                <img src="admin_ui/assets/services/icon3-4.svg" alt="">
+                                <span>Others(sector specific, strategies and policies related, etc)</span>
+                                </div>
                             </div>
                         </section>
 
