@@ -3,12 +3,16 @@ $darker-color: #363636;
 $blue-color: #1b619e;
 $yellow-color: #fdc501;
 $tabs-default-color: #ACACAC;
-
+* {
+  transition: ease-in-out .5s;
+}
 body {
   font-family: "Poppins", sans-serif;
   background: #f3f3f3;
 }
-
+ul {
+  padding: 0;
+}
 .row {
   margin-right: 0;
   margin-left: 0;
@@ -160,7 +164,7 @@ body {
     background: white;
     border-radius: 5px;
     margin: 2em;
-    padding: 2.5em;
+    padding: 3em;
 
     // class for active tabs
     .active-tab {
@@ -335,23 +339,27 @@ body {
         display: flex;
         flex-wrap: wrap;
         text-align: center;
-        margin-top: -5em;
+
         .item {
           position: relative;
         }
+
         span {
           position: absolute;
           top: 60%;
           left: 50%;
           transform: translate(-50%, -50%);
+          line-height: 1;
+          font-size: 14px;
         }
+
         img {
           max-width: 300px;
           margin: 0 20px 20px 20px;
         }
       }
 
-      .col-6 {
+      .col-5 {
         display: flex;
         justify-content: left;
         margin-bottom: 20px;
@@ -362,6 +370,7 @@ body {
           border-color: transparent transparent transparent rgba($color: $yellow-color, $alpha: 0.3);
           line-height: 0;
           position: relative;
+          height: fit-content;
 
           span {
             position: absolute;
@@ -461,6 +470,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 0 3em;
 
   input,
   textarea {
@@ -472,7 +482,6 @@ body {
     border: none;
     margin-bottom: 1em;
   }
-
   button {
     border-radius: 5px;
     color: white;
@@ -482,10 +491,7 @@ body {
   }
 
   .map {
-    width: 60%;
     border-radius: 5px;
-    margin: 0 0 0 20px;
-
     iframe {
       border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -507,6 +513,7 @@ header {
     padding-right: 0 !important;
 
     .navbar-nav {
+      max-width: 80%;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -537,27 +544,8 @@ header {
     }
 
     .language {
-      background: #fdc501;
-      border-radius: 3px;
-      padding: 0 5px;
-      margin: 0 10px;
-      transition: ease-in-out .5s;
-
       a {
-        color: white;
         font-family: 'Tajawal', sans-serif;
-
-      }
-
-      &:hover,
-      &:focus,
-      &:visited,
-      &:active {
-        background: $blue-color;
-
-        a {
-          color: white;
-        }
       }
     }
 
@@ -587,8 +575,7 @@ footer {
   background: $dark-color;
 
   .data-footer {
-    padding: 50px 15px 35px 15px;
-
+    padding: 50px 70px;
     .rows {
       color: white;
       padding: 0 15px;
@@ -749,9 +736,7 @@ footer {
   footer .data-footer .rows img {
     width: 120px
   }
-  #content #tabs .tab-pane .extra-data {
-    margin-top: 0;
-  }
+
   #content #home-data .row .triangle {
     border-width: 0 5.2em 6.2em 5.2em !important;
 
@@ -839,12 +824,29 @@ footer {
   #content #tabs .tab-pane .row {
     flex-direction: column;
 
-    .col-6 {
+    .col-6, .col-5{
       flex: 0 0 100%;
       max-width: 100%;
     }
   }
-
+#content #tabs .contact, footer{
+  .col-4, .col-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .map {
+    margin-top: 2em;
+    iframe {
+      height: 300px;
+    }
+  }
+}
+footer{
+  .col-6{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
   #content #tabs .tab-pane .col-6 h4 {
     padding-left: 2em;
   }
@@ -864,19 +866,20 @@ footer {
   .social-Media {
     text-align: center;
   }
+
+  #content #tabs .tab-pane .extra-data img {
+    max-width: 200px;
+  }
   .contact .map {
     width: 50%;
   }
+
   footer .data-footer {
     padding: 30px 10px 0 10px;
   }
 
   .navbar-brand:last-child {
     display: none;
-  }
-
-  header nav .language {
-    width: fit-content;
   }
 
   .active {
@@ -993,7 +996,9 @@ footer {
   p,
   a,
   .date,
-  .download-btn, ::placeholder, button {
+  .download-btn,
+  ::placeholder,
+  button {
     font-size: .8em !important;
   }
 
@@ -1043,7 +1048,7 @@ footer {
     margin-bottom: 2em;
   }
 
-  #content #tabs .tab-pane .col-6 .triangle-list {
+  #content #tabs .tab-pane .col-5 .triangle-list {
     border: none !important;
     line-height: 2;
     color: $blue-color;
@@ -1071,9 +1076,11 @@ footer {
     line-height: 1.5;
   }
 }
-@media(max-width:325px){
+
+@media(max-width:325px) {
+
   #content #tabs .main-title h2,
-  #content #tabs .tab-pane section .data-details h3{
+  #content #tabs .tab-pane section .data-details h3 {
     font-size: .85em;
     line-height: 1.5;
   }

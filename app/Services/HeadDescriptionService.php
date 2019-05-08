@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Yajra\Datatables\Datatables as Datatables;
 use App\Models\Description;
 use App\Services\UtilityService;
+use Illuminate\Support\Facades\Mail;
 
 class HeadDescriptionService
 {
@@ -141,5 +142,24 @@ class HeadDescriptionService
     static function getHeadDescription($page)
     {
         return Description::where('page', $page)->first();
+    }
+
+    static function sendMessage($parameters)
+    {
+//        $data = array(
+//            'email' => $parameters['email'],
+//            'name' => $parameters['name'],
+//            'phone' => $parameters['phone'],
+//            'message' => $parameters['message']
+//        );
+//        Mail::send('emails.sendMessage', $data, function($message) use ($data)
+//        {
+//            $message
+//                ->from( $data['email'], env('APP_NAME'))
+//                ->subject("New message")
+//                ->to(env('MAIL_USERNAME'));
+//        });
+
+        return array('status' => 1, 'message' => 'Mail send successfully');
     }
 }

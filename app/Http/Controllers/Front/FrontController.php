@@ -79,4 +79,16 @@ class FrontController extends AbstractController {
     {
         return view('front.contact-us');
     }
+
+    //send message
+    public function sendMessage(Request $request)
+    {
+        $parameters = $request->all();
+        HeadDescriptionService::sendMessage($parameters);
+        if(\Config::get('app.locale') == 'en')
+            $success = 'Message send successfully';
+        else
+            $success = 'تم الأرسال بنجاح';
+        return redirect()->back()->with('message', $success);
+    }
 }

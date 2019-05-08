@@ -1,6 +1,12 @@
+* {
+  transition: ease-in-out .5s; }
+
 body {
   font-family: "Poppins", sans-serif;
   background: #f3f3f3; }
+
+ul {
+  padding: 0; }
 
 .row {
   margin-right: 0;
@@ -95,7 +101,7 @@ body {
   background: white;
   border-radius: 5px;
   margin: 2em;
-  padding: 2.5em; }
+  padding: 3em; }
   #content #tabs .active-tab a {
     color: #1b619e !important;
     border-bottom: 2px solid #1b619e !important; }
@@ -206,35 +212,37 @@ body {
   #content #tabs .tab-pane .extra-data {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    margin-top: -5em; }
+    text-align: center; }
     #content #tabs .tab-pane .extra-data .item {
       position: relative; }
     #content #tabs .tab-pane .extra-data span {
       position: absolute;
       top: 60%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      font-size: 14px; }
     #content #tabs .tab-pane .extra-data img {
       max-width: 300px;
       margin: 0 20px 20px 20px; }
-  #content #tabs .tab-pane .col-6 {
+  #content #tabs .tab-pane .col-5 {
     display: flex;
     justify-content: left;
     margin-bottom: 20px; }
-    #content #tabs .tab-pane .col-6 .triangle-list {
+    #content #tabs .tab-pane .col-5 .triangle-list {
       border-style: solid;
       border-width: 25px 0 35px 35px;
       border-color: transparent transparent transparent rgba(253, 197, 1, 0.3);
       line-height: 0;
-      position: relative; }
-      #content #tabs .tab-pane .col-6 .triangle-list span {
+      position: relative;
+      height: fit-content; }
+      #content #tabs .tab-pane .col-5 .triangle-list span {
         position: absolute;
         top: 0.1em;
         left: -0.7em;
         font-size: 2.35em;
         font-weight: 600; }
-    #content #tabs .tab-pane .col-6 h4 {
+    #content #tabs .tab-pane .col-5 h4 {
       display: inline-block;
       padding-top: 0.5em;
       padding-left: 1em;
@@ -288,7 +296,8 @@ body {
 .contact {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  padding: 0 3em; }
   .contact input,
   .contact textarea {
     display: block;
@@ -305,9 +314,7 @@ body {
     background: #1b619e;
     padding: 10px; }
   .contact .map {
-    width: 60%;
-    border-radius: 5px;
-    margin: 0 0 0 20px; }
+    border-radius: 5px; }
     .contact .map iframe {
       border-radius: 5px;
       -webkit-border-radius: 5px;
@@ -324,6 +331,7 @@ header {
   header nav {
     padding-right: 0 !important; }
     header nav .navbar-nav {
+      max-width: 80%;
       flex-wrap: wrap;
       justify-content: center; }
     header nav ul {
@@ -338,19 +346,8 @@ header {
         color: #fdc501;
         cursor: pointer;
         text-decoration: none; }
-    header nav .language {
-      background: #fdc501;
-      border-radius: 3px;
-      padding: 0 5px;
-      margin: 0 10px;
-      transition: ease-in-out .5s; }
-      header nav .language a {
-        color: white;
-        font-family: 'Tajawal', sans-serif; }
-      header nav .language:hover, header nav .language:focus, header nav .language:visited, header nav .language:active {
-        background: #1b619e; }
-        header nav .language:hover a, header nav .language:focus a, header nav .language:visited a, header nav .language:active a {
-          color: white; }
+    header nav .language a {
+      font-family: 'Tajawal', sans-serif; }
     header nav .active a {
       color: #fdc501; }
     header nav .active:after {
@@ -368,7 +365,7 @@ header {
 footer {
   background: #414141; }
   footer .data-footer {
-    padding: 50px 15px 35px 15px; }
+    padding: 50px 70px; }
     footer .data-footer .rows {
       color: white;
       padding: 0 15px; }
@@ -469,9 +466,6 @@ footer {
   footer .data-footer .rows img {
     width: 120px; }
 
-  #content #tabs .tab-pane .extra-data {
-    margin-top: 0; }
-
   #content #home-data .row .triangle {
     border-width: 0 5.2em 6.2em 5.2em !important; }
     #content #home-data .row .triangle span {
@@ -528,9 +522,21 @@ footer {
 
   #content #tabs .tab-pane .row {
     flex-direction: column; }
-    #content #tabs .tab-pane .row .col-6 {
+    #content #tabs .tab-pane .row .col-6, #content #tabs .tab-pane .row .col-5 {
       flex: 0 0 100%;
       max-width: 100%; }
+
+  #content #tabs .contact .col-4, #content #tabs .contact .col-8, footer .col-4, footer .col-8 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  #content #tabs .contact .map, footer .map {
+    margin-top: 2em; }
+    #content #tabs .contact .map iframe, footer .map iframe {
+      height: 300px; }
+
+  footer .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%; }
 
   #content #tabs .tab-pane .col-6 h4 {
     padding-left: 2em; } }
@@ -544,6 +550,9 @@ footer {
   .social-Media {
     text-align: center; }
 
+  #content #tabs .tab-pane .extra-data img {
+    max-width: 200px; }
+
   .contact .map {
     width: 50%; }
 
@@ -552,9 +561,6 @@ footer {
 
   .navbar-brand:last-child {
     display: none; }
-
-  header nav .language {
-    width: fit-content; }
 
   .active:after {
     content: none !important; }
@@ -627,7 +633,9 @@ footer {
   p,
   a,
   .date,
-  .download-btn, ::placeholder, button {
+  .download-btn,
+  ::placeholder,
+  button {
     font-size: .8em !important; }
 
   .contact {
@@ -663,11 +671,11 @@ footer {
   #content #tabs .nav-tabs {
     margin-bottom: 2em; }
 
-  #content #tabs .tab-pane .col-6 .triangle-list {
+  #content #tabs .tab-pane .col-5 .triangle-list {
     border: none !important;
     line-height: 2;
     color: #1b619e; }
-    #content #tabs .tab-pane .col-6 .triangle-list span {
+    #content #tabs .tab-pane .col-5 .triangle-list span {
       font-size: 1.2em;
       top: 0;
       left: 0; } }

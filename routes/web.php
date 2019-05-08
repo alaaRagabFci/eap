@@ -80,6 +80,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::Get('/company-clients', 'FrontController@clients');
         Route::Get('/company-news', 'FrontController@news');
         Route::Get('/contactUs', 'FrontController@contactUs');
+        Route::Post('/send-message', 'FrontController@sendMessage');
     });
 
     Route::get('/lang/{lang}' , function($lang){

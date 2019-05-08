@@ -43,7 +43,7 @@
                         <div id="menu1" class="notShow tab-pane fade">
                             <section class="row">
                                 @for ($i = 0; $i < count($clients); $i++)
-                                    <div class="col-6">
+                                    <div class="col-5 offset-1">
                                         <div class="triangle-list"><span>{{$i+1}}</span></div>
                                         <h4>{{ translation($clients[$i],'name') }}</h4>
                                     </div>
@@ -54,7 +54,7 @@
                         <div id="menu2" class="notShow tab-pane fade">
                             <section class="row">
                                 @for ($i = 0; $i < count($partners); $i++)
-                                    <div class="col-6">
+                                    <div class="col-5 offset-1">
                                         <div class="triangle-list"><span>{{$i+1}}</span></div>
                                         <h4>{{ translation($partners[$i],'name') }}</h4>
                                     </div>

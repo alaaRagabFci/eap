@@ -99,18 +99,22 @@
                 <a href="tel:<?php echo $phones[0]; ?>"><i class="fas fa-phone-volume"></i><?php echo $phones[0].  ' / ' .$phones[1]; ?> </a>
             </div>
             <div class="rows col-lg col-md-6 col-sm-6 col-12">
-                <p>{{ trans('front.company') }}</p>
+                <div class="row">
+              <div class="col-6 mb-3">
+              <p>{{ trans('front.company') }}</p>
                 <a href="{{ url('/aboutUs') }}">{{ trans('front.about_us') }}</a>
                 <a href="{{ url('/company-news') }}">{{ trans('front.news') }}</a>
                 <a href="{{ url('/contactUs') }}">{{ trans('front.contactUs') }}</a>
-            </div>
-            <div class="rows col-lg col-md-6 col-sm-6 col-12">
+              </div>
+                <div class="col-6 mb-3">
                 <p>{{ trans('front.services') }}</p>
                 <a href="{{ url('/company-services') }}">{{ trans('front.expertises') }}</a>
                 <a href="{{ url('/company-services') }}">{{ trans('front.services') }}</a>
                 <a href="{{ url('/company-services') }}">{{ trans('front.projects') }}</a>
                 <a href="{{ url('/consultancy-approach') }}">{{ trans('front.consultancy') }}</a>
                 <a href="{{ url('/quality-managment') }}">{{ trans('front.managment') }}</a>
+                </div>
+                </div>
             </div>
             <div class="rows col-lg col-md-6 col-sm-6 col-12">
                 <p>{{ trans('front.newsLetter') }}</p>
