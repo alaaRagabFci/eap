@@ -26,5 +26,9 @@ return [
     'email' => 'البريد الألكتروني',
     'phone' => 'رقم الهاتف',
     'details' => 'التفاصيل',
-    'send' => 'أرسال'
+    'send' => 'أرسال',
+    'ourExpertise' => 'خبرتنا',
+    'ourServices' => 'خدماتنا',
+    'ourProjects' => 'مشاريعنا',
+    'heroText' => 'للأستشارات والتدريب'
 ];

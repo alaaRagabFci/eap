@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2019 at 07:03 PM
+-- Generation Time: May 09, 2019 at 02:42 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -172,9 +172,9 @@ CREATE TABLE `expertises` (
 --
 
 INSERT INTO `expertises` (`id`, `title_ar`, `title_en`, `description_ar`, `description_en`, `icon`) VALUES
-(1, 'القطاع العام', 'Public Sector', 'later', 'later', '/images/uploads/1555760321a20c12cd4fa0825a7b01a4b83b04d97bimage.png'),
-(2, 'القطاع الخاص', 'Private Sector', 'later', 'later', '/images/uploads/1555760426499f3dbd5fe915e279128742a24ab37fimage.png'),
-(3, 'القطاع غير الحكومي', 'Non-Governmental Sector', 'later', 'later', '/images/uploads/1555760492b598b79fafd0347b6d1dee027b53af1bimage.png');
+(1, 'القطاع العام', 'Public Sector', 'later', 'later', '/images/uploads/icon2-1.svg'),
+(2, 'القطاع الخاص', 'Private Sector', 'later', 'later', '/images/uploads/icon2-2.svg'),
+(3, 'القطاع غير الحكومي', 'Non-Governmental Sector', 'later', 'later', '/images/uploads/icon2.svg');
 
 -- --------------------------------------------------------
 
@@ -250,12 +250,12 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `title_ar`, `title_en`, `description_ar`, `description_en`, `icon`) VALUES
-(1, 'later', 'Institutional, Organizational, and Systems Development - Public Sector', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png'),
-(2, 'later', 'Institutional, Organizational, and Systems Development - Private Sector', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png'),
-(3, 'later', 'Capacity Building and Awareness', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png'),
-(4, 'later', 'NGOs related', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png'),
-(5, 'later', 'Participatory Development / Local Urban and Rural Development', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png'),
-(6, 'later', 'Others (sector specific, strategies and policies related, etc.)', 'later', 'later', '/images/uploads/155576186485b3e2043b00e2644e2e4a385ecae2e3image.png');
+(1, 'التطوير المؤسسي والتنظيمي وتطوير النظم - القطاع العام', 'Institutional, Organizational, and Systems Development - Public Sector', 'later', 'later', '/images/uploads/icon3.svg'),
+(2, 'التطوير المؤسسي والتنظيمي وتطوير النظم - القطاع الخاص', 'Institutional, Organizational, and Systems Development - Private Sector', 'later', 'later', '/images/uploads/icon3-3.svg'),
+(3, 'المنظمات غير الحكومية ذات الصلة', 'NGOs related', 'later', 'later', '/images/uploads/icon3-2.svg'),
+(4, 'بناء القدرات والتوعية', 'Capacity Building and Awareness', 'later', 'later', '/images/uploads/icon3-1.svg'),
+(5, 'التنمية التشاركية / التنمية الحضرية والريفية المحلية', 'Participatory Development / Local Urban and Rural Development', 'later', 'later', '/images/uploads/icon3-5.svg'),
+(6, 'غيرها (قطاع معين ، والاستراتيجيات والسياسات ذات الصلة ، وما إلى ذلك)', 'Others (sector specific, strategies and policies related, etc.)', 'later', 'later', '/images/uploads/icon3-4.svg');
 
 -- --------------------------------------------------------
 
@@ -300,13 +300,13 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `title_ar`, `title_en`, `description_ar`, `description_en`, `icon`) VALUES
-(1, 'إدارة المشروعات', 'PROJECTS MANAGEMENT', 'later', 'later', '/images/uploads/15557605506d920c8feba43b750ad8954fb7d780a5image.png'),
-(2, 'إدارة استراتيجية', 'STRATEGIC MANAGEMENT AND PLANNING', 'later', 'later', '/images/uploads/15557606103769fdf54082ced5504e7c851c06e424image.png'),
-(3, 'التطوير المؤسسي', 'INSTITUTIONAL DEVELOPMENT', 'later', 'later', '/images/uploads/155576075062e21c29911649d4ecba74f35140c49dimage.png'),
-(4, 'أدارة وتنمية الموارد البشرية', 'HUMAN RESOURCES MANAGEMENT AND DEVELOPMENT', 'later', 'later', '/images/uploads/1555760846e3d8f2c8682a93fef2b3b249945beb56image.png'),
-(5, 'التحليل الأقتصادي والمالي', 'ECONOMIC AND FINANCIAL ANALYSIS', 'later', 'later', '/images/uploads/1555761136e831024187a719b5cffb1154a3562fa0image.png'),
-(6, 'التحليل الأجتماعي والأقتصادي وأثر المشروعات', 'Socio-economic analysis and impacts of projects', 'later', 'later', '/images/uploads/155576128128648cd876c8777c11d183e2aeda9743image.png'),
-(8, 'بنوك البيانات وأنظمة أدارة المعلومات وأنظمة المعلومات الجغرافية', 'Data Banks, Management Information Systems, and Geographic Information SystemS', 'later', 'later', '/images/uploads/1555761475b3fe621c3af64c6890c8e4bcc64f2df2image.png');
+(1, 'إدارة المشروعات', 'PROJECTS MANAGEMENT', 'later', 'later', '/images/uploads/icon1.svg'),
+(2, 'إدارة استراتيجية', 'STRATEGIC MANAGEMENT AND PLANNING', 'later', 'later', '/images/uploads/icon2-3.svg'),
+(3, 'التطوير المؤسسي', 'INSTITUTIONAL DEVELOPMENT', 'later', 'later', '/images/uploads/icon1-3.svg'),
+(4, 'أدارة وتنمية الموارد البشرية', 'HUMAN RESOURCES MANAGEMENT AND DEVELOPMENT', 'later', 'later', '/images/uploads/icon2-7.svg'),
+(5, 'التحليل الأقتصادي والمالي', 'ECONOMIC AND FINANCIAL ANALYSIS', 'later', 'later', '/images/uploads/icon2-6.svg'),
+(6, 'التحليل الأجتماعي والأقتصادي وأثر المشروعات', 'Socio-economic analysis and impacts of projects', 'later', 'later', '/images/uploads/icon1-2.svg'),
+(8, 'بنوك البيانات وأنظمة أدارة المعلومات وأنظمة المعلومات الجغرافية', 'Data Banks, Management Information Systems, and Geographic Information SystemS', 'later', 'later', '/images/uploads/icon2-4.svg');
 
 -- --------------------------------------------------------
 

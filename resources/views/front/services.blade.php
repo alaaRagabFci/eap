@@ -12,13 +12,13 @@
                 </section>
                 <ul class="nav nav-tabs">
                     <li><a data-toggle="tab" href="#menu1">
-                            <div class="tab-triangle"><span>1</span></div> Our Expertise
+                            <div class="tab-triangle"><span>1</span></div> {{ trans('front.ourExpertise') }}
                         </a></li>
                     <li><a data-toggle="tab" href="#menu2">
-                            <div class="tab-triangle"><span>2</span></div> Our Services
+                            <div class="tab-triangle"><span>2</span></div> {{ trans('front.ourServices') }}
                         </a></li>
                     <li><a data-toggle="tab" href="#menu3">
-                            <div class="tab-triangle"><span>3</span></div> Our Projects
+                            <div class="tab-triangle"><span>3</span></div> {{ trans('front.ourProjects') }}
                         </a></li>
 
                 </ul>
@@ -59,16 +59,12 @@
                             </div>
                         </section>
                         <section class="extra-data">
+                            @foreach($expertises as $expertise)
                             <div class="item">
-                            <img src="admin_ui/assets/services/icon2-1.svg" alt="">
-                            <span>Public Sector</span>
+                            <img src="{{ asset($expertise->icon) }}" alt="">
+                            <span>{{ translation($expertise,'title') }}</span>
                             </div>
-                            <div class="item">
-                            <img src="admin_ui/assets/services/icon2-2.svg" alt="">
-                            <span>Private Sector</span></div>
-                            <div class="item">
-                            <img src="admin_ui/assets/services/icon2.svg" alt="">
-                            <span>Non-Governmental Sector</span></div>
+                            @endforeach
                         </section>
                     </div>
                     <div id="menu2" class="blue-border notShow tab-pane fade">
@@ -90,42 +86,37 @@
                         </section>
                         <section class="extra-data">
                             <div>
+                                @for($i = 0; $i < count($services); $i++)
                                 <div class="item">
-                                <img src="admin_ui/assets/services/icon1.svg" alt="">
-                                <span>Project Management</span>
+                                    <img src="{{ asset($services[$i]->icon) }}" alt="">
+                                    <span>{{ translation($services[$i],'title') }}</span>
                                 </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon2-3.svg" alt="">
-                                <span>Strategic Management</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon1-3.svg" alt="">
-                                <span>ID & OD</span>
-                                </div>
+                                    @if($i == 2)
+                                        @break;
+                                    @endif
+                                @endfor
                             </div>
                             <div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon2-7.svg" alt="">
-                                <span>HRM</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon2-5.svg" alt="">
-                                <span>HR Development</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon2-6.svg" alt="">
-                                <span>Economic & Financial Analysis</span>
-                                </div>
+                                @for($i = 3; $i < count($services); $i++)
+                                    <div class="item">
+                                        <img src="{{ asset($services[$i]->icon) }}" alt="">
+                                        <span>{{ translation($services[$i],'title') }}</span>
+                                    </div>
+                                    @if($i == 5)
+                                        @break;
+                                    @endif
+                                 @endfor
                             </div>
                             <div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon1-2.svg" alt="">
-                                <span>Socio-Economic Studies</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon2-4.svg" alt="">
-                                <span>Databases, MIS & GIS</span>
-                                </div>
+                                @for($i = 6; $i < count($services); $i++)
+                                    <div class="item">
+                                        <img src="{{ asset($services[$i]->icon) }}" alt="">
+                                        <span>{{ translation($services[$i],'title') }}</span>
+                                    </div>
+                                    @if($i == 7)
+                                        @break;
+                                    @endif
+                                @endfor
                             </div>
                         </section>
                     </div>
@@ -148,32 +139,23 @@
                         </section>
                         <section class="extra-data">
                             <div>
-                                <div class="item">                                    
-                                <img src="admin_ui/assets/services/icon3.svg" alt="">
-                                <span>Public Sector: <br/> ID, OD & Systems Developments</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon3-3.svg" alt="">
-                                <span>Private Sector: <br/> ID, OD & Systems Developments</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon3-2.svg" alt="">
-                                <span>NGOs Related</span>
-                                </div>
+                                @for($i = 0; $i < count($projects); $i++)
+                                    <div class="item">
+                                        <img src="{{ asset($projects[$i]->icon) }}" alt="">
+                                        <span>{{ translation($projects[$i],'title') }}</span>
+                                    </div>
+                                    @if($i == 2)
+                                        @break;
+                                    @endif
+                                @endfor
                             </div>
                             <div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon3-1.svg" alt="">
-                                <span>Capacity Building & Awareness</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon3-5.svg" alt="">
-                                <span>Participatory Development/ Local Urban and Rual Development</span>
-                                </div>
-                                <div class="item">
-                                <img src="admin_ui/assets/services/icon3-4.svg" alt="">
-                                <span>Others(sector specific, strategies and policies related, etc)</span>
-                                </div>
+                                @for($i = 3; $i < count($projects); $i++)
+                                    <div class="item">
+                                        <img src="{{ asset($projects[$i]->icon) }}" alt="">
+                                        <span>{{ translation($projects[$i],'title') }}</span>
+                                    </div>
+                                @endfor
                             </div>
                         </section>
 

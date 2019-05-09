@@ -12,14 +12,23 @@
         </div>
         <div class="col-8">
           <div class="d-flex">
-            <img src="admin_ui/assets/hero/Group405.svg" alt="">
-            <img src="admin_ui/assets/hero/Group406.svg" alt="">
+              @if(\Config::get('app.locale') == 'en')
+                    <img src="admin_ui/assets/hero/Group405.svg" alt="">
+                    <img src="admin_ui/assets/hero/Group406.svg" alt="">
+              @else
+                   <img src="admin_ui/assets/hero/Consultations.svg" alt="">
+                   <img src="admin_ui/assets/hero/Capacity Building.svg" alt="">
+              @endif
           </div>
           <div>
-            <h3><span>EAP </span> for Consultancy & Training</h3>
+            <h3><span>{{ trans('front.title') }} </span> {{ trans('front.heroText') }}</h3>
           </div>
           <div>
-            <img src="admin_ui/assets/hero/Group407.svg" alt="">
+              @if(\Config::get('app.locale') == 'en')
+                <img src="admin_ui/assets/hero/Group407.svg" alt="">
+              @else
+                 <img src="admin_ui/assets/hero/Management.svg" alt="">
+              @endif
           </div>
         </div>
       </div>

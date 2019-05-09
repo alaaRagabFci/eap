@@ -26,5 +26,9 @@ return [
     'email' => 'Email',
     'phone' => 'Phone',
     'details' => 'Details',
-    'send' => 'SEND MESSAGE'
+    'send' => 'SEND MESSAGE',
+    'ourExpertise' => 'Our Expertise',
+    'ourServices' => 'Our Services',
+    'ourProjects' => 'Our Projects',
+    'heroText' => 'for Consultancy & Training'
 ];
