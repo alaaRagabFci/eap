@@ -25,9 +25,9 @@
           </div>
           <div>
               @if(\Config::get('app.locale') == 'en')
-                <img src="admin_ui/assets/hero/Group407.svg" alt="">
+                <img class="bottom" src="admin_ui/assets/hero/Group407.svg" alt="">
               @else
-                 <img src="admin_ui/assets/hero/Management.svg" alt="">
+                 <img class="bottom" src="admin_ui/assets/hero/Management.svg" alt="">
               @endif
           </div>
         </div>

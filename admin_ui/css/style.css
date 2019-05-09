@@ -162,6 +162,8 @@ ul {
           left: -5px; }
   #content #tabs .news {
     justify-content: initial !important; }
+  #content #tabs .tab-pane .partners {
+    justify-content: flex-start; }
   #content #tabs .tab-pane section {
     justify-content: center;
     position: relative; }

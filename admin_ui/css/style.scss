@@ -263,6 +263,10 @@ ul {
     }
 
     .tab-pane {
+      .partners{
+        justify-content: flex-start;
+
+      }
       section {
         justify-content: center;
         position: relative;

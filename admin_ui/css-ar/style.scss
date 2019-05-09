@@ -151,6 +151,9 @@ ul {
           img {
             width: 40%;
           }
+          .bottom {
+            width: fit-content;
+          }
         }
 
       }
@@ -276,8 +279,12 @@ ul {
     }
 
     .tab-pane {
-      section {
+      .partners{
         justify-content: flex-start;
+
+      }
+      section {
+        justify-content: center;
         position: relative;
 
         .h-4 {
@@ -533,7 +540,7 @@ header {
     }
 
     .navbar-nav {
-      max-width: 80%;
+      max-width: 50%;
       flex-wrap: wrap;
       justify-content: center;
     }
