@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="path"></div>
                             </div>
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($headDescriptions,'title') }}</h3>
                                 <p>{{ translation($headDescriptions,'description') }}</p>
                             </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="path"></div>
                             </div>
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($consultancies[$i],'title') }}</h3>
                                 <p>{{ translation($consultancies[$i],'description') }}</p>
                             </div>

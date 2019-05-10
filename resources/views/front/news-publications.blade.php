@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="path"></div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>{{ translation($headDescriptions,'title') }}</h3>
                                     <p>{{ translation($headDescriptions,'description') }}</p>
                                 </div>
@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="path"></div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Download Our Profile</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -85,7 +85,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Download Our Profile</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Download Our Profile</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -133,7 +133,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Download Our Profile</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -160,7 +160,7 @@
 
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Lorem ipsum dolor sit amet</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -191,7 +191,7 @@
 
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Lorem ipsum dolor sit amet</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -222,7 +222,7 @@
 
                                     </div>
                                 </div>
-                                <div class="data-details">
+                                <div class="data-details" id="height">
                                     <h3>Lorem ipsum dolor sit amet</h3>
                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At

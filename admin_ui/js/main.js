@@ -14,4 +14,9 @@
             $('.notShow').removeClass('active show');
             $('#menu0').addClass('active show');
         });
+        var x = document.getElementById('height');
+        var shapeH = x.offsetHeight + 315;
+         alert( x.offsetHeight);
+         $('.shape').css('height', shapeH);
+      
     });

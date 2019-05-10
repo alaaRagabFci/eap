@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="path"></div>
                             </div>
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($headDescriptions,'title') }}</h3>
                                 <p>{{ translation($headDescriptions,'description') }}</p>
                             </div>
@@ -53,7 +53,7 @@
                                 <div class="path"></div>
                             </div>
 
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($headDescriptionsExpertises,'title') }}</h3>
                                 <p>{{ translation($headDescriptionsExpertises,'description') }}</p>
                             </div>
@@ -79,7 +79,7 @@
                                 <div class="path"></div>
                             </div>
 
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($headDescriptionsServices,'title') }}</h3>
                                 <p>{{ translation($headDescriptionsServices,'description') }}</p>
                             </div>
@@ -132,7 +132,7 @@
                                 <div class="path"></div>
                             </div>
 
-                            <div class="data-details">
+                            <div class="data-details" id="height">
                                 <h3>{{ translation($headDescriptionsProjects,'title') }}</h3>
                                 <p>{{ translation($headDescriptionsProjects,'description') }}</p>
                             </div>
